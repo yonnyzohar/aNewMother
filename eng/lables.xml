@@ -1,0 +1,14 @@
+<?xml version=1.0 encoding=utf-8?>
+<list>
+  <item>
+    <mainMenu>Menu</mainMenu>
+	<about>About</about>
+	<play>Play book</play>
+    <franchise>Granny Tales</franchise>
+	<storyName>The search for a new mother</storyName>
+	<buyBook>Buy full book</buyBook>
+	<buyNow>Buy Now</buyNow>
+	<aboutContents>this is the long version</aboutContents>
+	<purchaseText>Please Purchase this story to read all of it</purchaseText>
+  </item>
+</list>

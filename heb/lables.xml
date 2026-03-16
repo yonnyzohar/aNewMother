@@ -1,0 +1,14 @@
+<?xml version=1.0 encoding=utf-8?>
+<list>
+  <item>
+    <mainMenu>תפריט</mainMenu>
+	<about>אודות</about>
+	<play>השמע ספר</play>
+    <franchise>סיפורי סבתא</franchise>
+	<storyName>האפרוח שהלך לבקש אם אחרת</storyName>
+	<buyBook>קנה את הספר המלא</buyBook>
+	<buyNow>קנה עכשיו</buyNow>
+	<aboutContents>טקסט כאן</aboutContents>
+	<purchaseText>אנא רכוש את הספר כדי לנגן את כולו</purchaseText>
+  </item>
+</list>
