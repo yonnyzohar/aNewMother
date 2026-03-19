@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zImporter Example</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Style the button to stay on top */
+        button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 10;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script src="bundle.js"></script>
+
+    <!-- This is a comment 
+    <button onclick="toggleFullscreen()">Go Fullscreen</button>
+
+    <script>
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+    -->
+</body>
+
+</html>
