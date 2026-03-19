@@ -1,0 +1,30 @@
+{
+  "name": "zImporter_PIXI_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/gsap": "^3.0.0",
+    "@types/node": "^22.13.2",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "ignore": [
+    "node_modules",
+    "logs",
+    "*.log",
+    ".vscode"
+  ],
+  "dependencies": {
+    "zimporter-pixi": "latest"
+  }
+}
