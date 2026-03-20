@@ -9,38 +9,25 @@ export class StoryLoader {
         const base = GlobalData.getLangPath();
 
         await Promise.all([
-            StoryLoader.loadStory(`${base}story.xml`),
-            StoryLoader.loadLabels(`${base}lables.xml`),
+            StoryLoader.loadStory(`${base}story.json`),
+            StoryLoader.loadLabels(`${base}lables.json`),
         ]);
     }
 
-    /**
-     * Parse an XML string tolerantly: the story XMLs use an unquoted
-     * `<?xml version=1.0 ...?>` declaration which is invalid XML; using
-     * 'text/html' lets the browser's lenient HTML parser handle it and all
-     * tag names are already lowercase so no normalisation is needed.
-     */
-    private static parseXML(text: string): Document {
-        return new DOMParser().parseFromString(text, 'text/html');
-    }
-
     private static async loadStory(url: string): Promise<void> {
-        const text = await StoryLoader.fetchText(url);
-        if (!text) return;
+        const data = await StoryLoader.fetchJSON<{ items: Array<{ file: string; sound: string; caption: string }> }>(url);
+        if (!data) return;
 
-        const doc = StoryLoader.parseXML(text);
         GlobalData.pages = [];
 
-        const items = doc.querySelectorAll('item');
-        items.forEach((item, index) => {
+        data.items.forEach((item, index) => {
             // Item at index 0 is a jpg title card with no pages/ folder — skip it.
             if (index === 0) return;
 
             const slide = new SlideObj();
             slide.pageNum = index; // pages/<index>/ folder exists for 1-27
-            const rawSound = item.querySelector('sound')?.textContent?.trim() ?? '';
-            slide.sound = rawSound.split('/').pop() ?? '';
-            slide.caption = item.querySelector('caption')?.textContent?.trim() ?? '';
+            slide.sound = item.sound.split('/').pop() ?? '';
+            slide.caption = item.caption;
             GlobalData.pages.push(slide);
         });
 
@@ -48,27 +35,19 @@ export class StoryLoader {
     }
 
     private static async loadLabels(url: string): Promise<void> {
-        const text = await StoryLoader.fetchText(url);
-        if (!text) return;
+        const data = await StoryLoader.fetchJSON<Record<string, string>>(url);
+        if (!data) return;
 
-        const doc = StoryLoader.parseXML(text);
-        GlobalData.labels = {};
-
-        const item = doc.querySelector('item');
-        if (item) {
-            for (const child of Array.from(item.children)) {
-                GlobalData.labels[child.tagName] = child.textContent?.trim() ?? '';
-            }
-        }
+        GlobalData.labels = data;
     }
 
-    private static async fetchText(url: string): Promise<string> {
+    private static async fetchJSON<T>(url: string): Promise<T | null> {
         try {
             const res = await fetch(url);
-            return await res.text();
+            return await res.json() as T;
         } catch (e) {
             console.warn(`StoryLoader: failed to fetch ${url}`, e);
-            return '';
+            return null;
         }
     }
 }

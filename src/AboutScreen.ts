@@ -25,7 +25,7 @@ export class AboutScreen {
         const ss = this.scene.sceneStage;
 
         ss.get('aboutTopTitleTXT')?.setText(L['about'] ?? 'About');
-        ss.get('aboutTXTArea')?.setText(L['aboutContents'] ?? '');
+        ss.get('aboutTXTArea')?.setText(L['aboutcontents'] ?? '');
 
         const xBtn = ss.get('xButton') as ZButton | null;
         xBtn?.setCallback(() => this._close());

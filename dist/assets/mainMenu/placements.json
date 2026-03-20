@@ -19,12 +19,12 @@
           "pivotY": 0,
           "isAnchored": false,
           "x": 0,
-          "scaleX": 1,
+          "scaleX": 0.72,
           "skewY": 0,
-          "y": 0,
+          "y": 241,
           "visible": true,
           "rotation": 0,
-          "scaleY": 1,
+          "scaleY": 0.72,
           "alpha": 1,
           "skewX": 0,
           "width": 1025,
@@ -55,7 +55,7 @@
     "Instance4": {
       "children": [
         {
-          "type": "asset",
+          "type": "fullScreen",
           "editorOnly": false,
           "name": "StartBG",
           "template": true,
@@ -93,6 +93,9 @@
             "skewX": 0,
             "width": 1025,
             "pivotX": 0
+          },
+          "attrs": {
+            "fitToScreen": true
           }
         },
         {
@@ -151,7 +154,7 @@
             "x": 447,
             "scaleX": 1,
             "skewY": 0,
-            "y": 463,
+            "y": 422,
             "visible": true,
             "rotation": 0,
             "scaleY": 1,
@@ -278,7 +281,7 @@
           "filters": {}
         }
       ],
-      "type": "asset",
+      "type": "fullScreen",
       "name": "StartBG"
     },
     "FranchiseTitleTXT": {
@@ -397,10 +400,10 @@
             "height": 49.15,
             "pivotY": 0,
             "isAnchored": false,
-            "x": -138,
+            "x": -106,
             "scaleX": 1,
             "skewY": 0,
-            "y": 51,
+            "y": 36,
             "visible": true,
             "rotation": 0,
             "scaleY": 1,
@@ -500,10 +503,10 @@
             "height": 49.15,
             "pivotY": 0,
             "isAnchored": false,
-            "x": -142,
+            "x": -74,
             "scaleX": 1,
             "skewY": 0,
-            "y": 113,
+            "y": 96,
             "visible": true,
             "rotation": 0,
             "scaleY": 1,

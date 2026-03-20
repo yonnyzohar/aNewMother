@@ -55,7 +55,7 @@ export class MainMenu {
         const ss = this.scene.sceneStage;
 
         ss.get('franchiseTitleTXT')?.setText(L['franchise'] ?? '');
-        ss.get('storyNameTXT')?.setText(L['storyName'] ?? '');
+        ss.get('storyNameTXT')?.setText(L['storyname'] ?? '');
 
         const playBtn = ss.get('playBookBTN') as ZButton | null;
         playBtn?.setLabel(L['play'] ?? 'Play');

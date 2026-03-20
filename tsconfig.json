@@ -11,6 +11,7 @@
      "strictFunctionTypes": true,                      
     "strictPropertyInitialization": false,            
      "alwaysStrict": true,                             
-    "skipLibCheck": true                               
+    "skipLibCheck": true,                              
+    "sourceMap": true                                  
   }
 }
