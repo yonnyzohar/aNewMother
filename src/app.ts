@@ -14,16 +14,12 @@ const app = new PIXI.Application({
 function resizeCanvas() {
   app.renderer.resize(window.innerWidth, window.innerHeight);
   ZSceneStack.resize(window.innerWidth, window.innerHeight);
+  game.resize(window.innerWidth, window.innerHeight);
 }
 
 window.addEventListener("resize", () => {
   resizeCanvas();
 });
-
-const params = new URLSearchParams(window.location.search);
-const path = params.get('path');
-(window as any).loadPath = path;
-console.log("Load path set to:", path);
 
 (globalThis as any).__PIXI_APP__ = app;
 
