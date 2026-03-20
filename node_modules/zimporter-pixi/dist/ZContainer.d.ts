@@ -315,5 +315,6 @@ export declare class ZContainer extends PIXI.Container {
      * The existing particles continue to age and disappear naturally.
      */
     stopParticleAnim(): void;
+    destroy(options?: PIXI.IDestroyOptions | boolean): void;
 }
 //# sourceMappingURL=ZContainer.d.ts.map

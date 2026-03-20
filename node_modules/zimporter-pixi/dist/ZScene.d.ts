@@ -22,6 +22,10 @@ export declare class ZScene {
      */
     private scene;
     /**
+     * Full-path aliases for individually-loaded images (non-atlas scenes).
+     */
+    private _imageAliases;
+    /**
      * The root container for all scene display objects.
      */
     private _sceneStage;
@@ -107,8 +111,8 @@ export declare class ZScene {
      */
     load(assetBasePath: string, _loadCompleteFnctn: Function, _updateProgressFnctn?: ProgressCallback): Promise<void>;
     /**
-     * Destroys the scene and its assets, freeing resources.
-     */
+       * Destroys the scene and its assets, freeing resources.
+       */
     destroy(): Promise<void>;
     /**
      * Loads the scene's assets and fonts, then initializes the scene.

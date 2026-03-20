@@ -1,5 +1,6 @@
 import { ZContainer } from "./ZContainer";
 import { InstanceData } from "./SceneData";
+import { IDestroyOptions } from "pixi.js";
 /**
  * Represents a timeline container that manages frame-based animations for its children.
  * Extends `ZContainer` and provides methods to control playback, frame navigation, and event listeners.
@@ -87,5 +88,6 @@ export declare class ZTimeline extends ZContainer {
      * @param frameNum - The frame index to display.
      */
     gotoAndStop(frameNum: number): void;
+    destroy(options?: IDestroyOptions | boolean): void;
 }
 //# sourceMappingURL=ZTimeline.d.ts.map
