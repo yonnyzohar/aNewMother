@@ -1,0 +1,32 @@
+{
+  "items": [
+    { "file": "assets/swf/0.jpg", "sound": "assets/sounds/quiet.mp3", "caption": "" },
+    { "file": "assets/swf/1.swf", "sound": "assets/sounds/1.mp3", "caption": "מעשה באפרוח שהלך לבקש אם אחרת" },
+    { "file": "assets/swf/2.swf", "sound": "assets/sounds/2.mp3", "caption": ".שמי חומי, אלה אחי האפרוחים ואמי היא התרנגולת" },
+    { "file": "assets/swf/3.swf", "sound": "assets/sounds/3.mp3", "caption": "אמא מאכילה אותנו בתולעים ובגרעינים,אותם היא מנקרת מן האדמה במקורה הארוך" },
+    { "file": "assets/swf/4.swf", "sound": "assets/sounds/4.mp3", "caption": ".הבוקר פרץ מן הרפת לחצרנו עגל שובב, קפץ והפחיד את כולנו" },
+    { "file": "assets/swf/5.swf", "sound": "assets/sounds/5.mp3", "caption": "אמא קראה לנו להתחבא תחת כנפיה, כדי שהעגל לא ירמוס אותנו. אני לא שמעתי בקול אמא" },
+    { "file": "assets/swf/6.swf", "sound": "assets/sounds/6.mp3", "caption": ".אמא כעסה עלי וניקרה בראשי: \"מסוכן מאוד!\" אמא אינה אוהבת אותי! אחפש לי אמא אחרת" },
+    { "file": "assets/swf/7.swf", "sound": "assets/sounds/7.mp3", "caption": ".נעלבתי וברחתי משם בריצה מהירה" },
+    { "file": "assets/swf/8.swf", "sound": "assets/sounds/8.mp3", "caption": ".ברווזה לבנה, התהיי לי לאם? כן בודאי, בוא לטייל עם חמשת אפרוחי" },
+    { "file": "assets/swf/9.swf", "sound": "assets/sounds/9.mp3", "caption": ".הובילה אותנו אמא ברווזה אל שפת האגם" },
+    { "file": "assets/swf/10.swf", "sound": "assets/sounds/10.mp3", "caption": ".כל הברווזים קפצו למים בשמחה. רק אני נשארתי על החוף, רועד מפחד" },
+    { "file": "assets/swf/11.swf", "sound": "assets/sounds/11.mp3", "caption": "!טיפש אל תפחד,המים מרעננים,פשוט רגליך ושחה - אמרה אמא ברווזה ודחפה אותי הישר אל תוך האגם" },
+    { "file": "assets/swf/12.swf", "sound": "assets/sounds/12.mp3", "caption": ".נבהלתי מאד. נוצותי נספגו במים. אילולי קפצתי אל החוף ודאי הייתי טובע" },
+    { "file": "assets/swf/13.swf", "sound": "assets/sounds/13.mp3", "caption": ".ברחתי מן האגם כל עוד נפשי בי" },
+    { "file": "assets/swf/14.swf", "sound": "assets/sounds/14.mp3", "caption": ".כמה נחמדה היא משפחת הדרורים, שם בקן מעל לחלון" },
+    { "file": "assets/swf/15.swf", "sound": "assets/sounds/15.mp3", "caption": "?אמא דרורה, התסכימי להיות לי לאם" },
+    { "file": "assets/swf/16.swf", "sound": "assets/sounds/16.mp3", "caption": ".כן, בשמחה, הכנס לקן ואכול עם גוזלי" },
+    { "file": "assets/swf/17.swf", "sound": "assets/sounds/17.mp3", "caption": "!הגיע הזמן, אפרוחי היקרים, ללמוד לעוף" },
+    { "file": "assets/swf/18.swf", "sound": "assets/sounds/18.mp3", "caption": ".פחדן, צייצה אמא דרורה,פרוש כנפיך ועוף לך! כנפי קצרות, לא אוכל לעוף כמוכם, התחננתי" },
+    { "file": "assets/swf/19.swf", "sound": "assets/sounds/19.mp3", "caption": ".רציתי להיות ככל הדרורים. פרשתי כנפי ו...נפלתי ארצה" },
+    { "file": "assets/swf/20.swf", "sound": "assets/sounds/20.mp3", "caption": ".כל גופי כאב! אך הנה חתולה יפיפיה" },
+    { "file": "assets/swf/21.swf", "sound": "assets/sounds/21.mp3", "caption": ".התסכימי להיות לי לאם? כן כמובן,  ועכשיו נזדרז למרתף, גורי לומדים עכשיו לצוד עכברים" },
+    { "file": "assets/swf/22.swf", "sound": "assets/sounds/22.mp3", "caption": "!אבל אני פוחד מעכברים" },
+    { "file": "assets/swf/23.swf", "sound": "assets/sounds/23.mp3", "caption": "לא תצליח בחיים- תשאר תמיד רעב! שרטה אותי החתולה" },
+    { "file": "assets/swf/24.swf", "sound": "assets/sounds/24.mp3", "caption": "כמה נפלא לראות את הכלבה משחקת עם גוריה, אצטרף אליהם. התסכימי להיות לי לאם?" },
+    { "file": "assets/swf/25.swf", "sound": "assets/sounds/25.mp3", "caption": "קפצה הכלבה מן המלונה והבריחה אותי ב\"הב הב\" רם: \"לא ולא! אתה לא משלנו! לך לך אל אמא תרנגולת!\"" },
+    { "file": "assets/swf/26.swf", "sound": "assets/sounds/26.mp3", "caption": "רצתי אל אמא שלי, אמא תרנגולת, וקראתי: \"את האמא הטובה בעולם! רק את אמא שלי!\"" },
+    { "file": "assets/swf/27.swf", "sound": "assets/sounds/27.mp3", "caption": "שוב נכנסנו כולנו יחד תחת כנפיה של אמא. היה נפלא!" }
+  ]
+}
