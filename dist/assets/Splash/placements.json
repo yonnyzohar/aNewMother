@@ -12,47 +12,39 @@
         "name": "Instance4",
         "template": true,
         "guide": false,
-        "instanceName": "blockScreen",
+        "instanceName": "instance4",
         "filters": {},
         "portrait": {
-          "x": 1,
-          "y": 242,
-          "rotation": 0,
-          "scaleX": 0.72,
-          "scaleY": 0.72,
-          "alpha": 1,
-          "pivotX": 0,
+          "height": 657.55,
           "pivotY": 0,
-          "visible": true,
-          "isAnchored": false,
-          "anchorLocalPercentage": {
-            "x": 0,
-            "y": 0
-          },
-          "width": 1028.3,
-          "height": 742.2,
+          "x": -5,
+          "rotation": 0,
+          "alpha": 1,
+          "scaleX": 0.81,
           "skewX": 0,
-          "skewY": 0
+          "y": 231,
+          "visible": true,
+          "scaleY": 0.81,
+          "skewY": 0,
+          "pivotX": 0,
+          "isAnchored": false,
+          "width": 950.8
         },
         "landscape": {
-          "x": 0,
-          "y": 0,
-          "rotation": 0,
-          "scaleX": 1,
-          "scaleY": 1,
-          "alpha": 1,
-          "pivotX": 0,
+          "height": 657.55,
           "pivotY": 0,
-          "visible": true,
-          "isAnchored": false,
-          "anchorLocalPercentage": {
-            "x": 0,
-            "y": 0
-          },
-          "width": 1028.3,
-          "height": 742.2,
+          "x": -5,
+          "rotation": 0,
+          "alpha": 1,
+          "scaleX": 1.11,
           "skewX": 0,
-          "skewY": 0
+          "y": 1,
+          "visible": true,
+          "scaleY": 1.12,
+          "skewY": 0,
+          "pivotX": 0,
+          "isAnchored": false,
+          "width": 950.8
         }
       }
     ],
@@ -63,337 +55,93 @@
     "Instance4": {
       "children": [
         {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Instance5",
-          "template": true,
-          "guide": false,
-          "instanceName": "instance5",
-          "filters": {},
-          "portrait": {
-            "height": 547.15,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 0,
-            "skewX": 0,
-            "y": -4,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1.36,
-            "scaleX": 1.12,
-            "alpha": 1,
-            "width": 917.75
-          },
-          "landscape": {
-            "height": 547.15,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 0,
-            "skewX": 0,
-            "y": -4,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1.36,
-            "scaleX": 1.12,
-            "alpha": 1,
-            "width": 917.75
-          }
+          "type": "img",
+          "name": "Instance4_IMG",
+          "width": 923,
+          "height": 658,
+          "x": 0,
+          "y": 0,
+          "pivotX": 0,
+          "pivotY": 0,
+          "filePath": "images/instance4.png",
+          "filters": {}
         },
         {
           "type": "asset",
           "editorOnly": false,
-          "name": "BlockBG",
+          "name": "Instance6",
           "template": true,
           "guide": false,
-          "instanceName": "blockBG",
+          "instanceName": "instance6",
           "filters": {},
           "portrait": {
-            "height": 547.15,
+            "height": 59.35,
             "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
+            "x": 21,
             "rotation": 0,
-            "x": 55,
-            "skewX": 0,
-            "y": 67,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1,
-            "scaleX": 1,
             "alpha": 1,
-            "width": 917.75
+            "scaleX": 1,
+            "skewX": 0,
+            "y": 566,
+            "visible": true,
+            "scaleY": 1,
+            "skewY": 0,
+            "pivotX": 0,
+            "isAnchored": false,
+            "width": 950.8
           },
           "landscape": {
-            "height": 547.15,
+            "height": 59.35,
             "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
+            "x": 21,
             "rotation": 0,
-            "x": 55,
-            "skewX": 0,
-            "y": 67,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1,
+            "alpha": 1,
             "scaleX": 1,
-            "alpha": 1,
-            "width": 917.75
-          }
-        },
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "TextBox",
-          "template": true,
-          "guide": false,
-          "instanceName": "textBox",
-          "filters": {},
-          "portrait": {
-            "height": 37,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 521,
             "skewX": 0,
-            "y": 617,
+            "y": 566,
             "visible": true,
-            "pivotX": 0,
             "scaleY": 1,
-            "scaleX": 1,
-            "alpha": 1,
-            "width": 728
-          },
-          "landscape": {
-            "height": 37,
-            "pivotY": 0,
-            "isAnchored": false,
             "skewY": 0,
-            "rotation": 0,
-            "x": 520,
-            "skewX": 0,
-            "y": 617,
-            "visible": true,
             "pivotX": 0,
-            "scaleY": 1,
-            "scaleX": 1,
-            "alpha": 1,
-            "width": 728
-          }
-        },
-        {
-          "type": "animation",
-          "editorOnly": false,
-          "name": "Twister",
-          "template": true,
-          "guide": false,
-          "instanceName": "twister",
-          "filters": {},
-          "portrait": {
-            "height": 244.64999999999998,
-            "pivotY": 0,
             "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 507,
-            "skewX": 0,
-            "y": 336,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 0.28,
-            "scaleX": 0.28,
-            "alpha": 1,
-            "width": 241
-          },
-          "landscape": {
-            "height": 244.64999999999998,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 507,
-            "skewX": 0,
-            "y": 336,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 0.28,
-            "scaleX": 0.28,
-            "alpha": 1,
-            "width": 241
-          },
-          "playOnStart": true
-        },
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Instance12",
-          "template": true,
-          "guide": false,
-          "instanceName": "sideFilms",
-          "filters": {},
-          "portrait": {
-            "x": 0,
-            "y": 0,
-            "rotation": 0,
-            "scaleX": 1,
-            "scaleY": 1,
-            "alpha": 1,
-            "pivotX": 0,
-            "pivotY": 0,
-            "visible": true,
-            "isAnchored": false,
-            "anchorLocalPercentage": {
-              "x": 0,
-              "y": 0
-            },
-            "width": 1028.15,
-            "height": 740.2,
-            "skewX": 0,
-            "skewY": 0
-          },
-          "landscape": {
-            "x": 0,
-            "y": 0,
-            "rotation": 0,
-            "scaleX": 1,
-            "scaleY": 1,
-            "alpha": 1,
-            "pivotX": 0,
-            "pivotY": 0,
-            "visible": true,
-            "isAnchored": false,
-            "anchorLocalPercentage": {
-              "x": 0,
-              "y": 0
-            },
-            "width": 1028.15,
-            "height": 740.2,
-            "skewX": 0,
-            "skewY": 0
+            "width": 950.8
           }
         }
       ],
       "type": "asset",
       "name": "Instance4"
     },
-    "Instance5": {
+    "Instance6": {
       "children": [
         {
-          "type": "img",
-          "name": "Instance5_IMG",
-          "width": 918,
-          "height": 548,
-          "x": 0,
-          "y": 0,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/instance5.png",
-          "filters": {}
-        }
-      ],
-      "type": "asset",
-      "name": "Instance5"
-    },
-    "BlockBG": {
-      "children": [
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Instance7",
-          "template": true,
-          "guide": false,
-          "instanceName": "sceneHolder",
-          "filters": {},
-          "portrait": {
-            "height": 547.15,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 0,
-            "skewX": 0,
-            "y": 0,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1,
-            "scaleX": 1,
-            "alpha": 1,
-            "width": 917.75
-          },
-          "landscape": {
-            "height": 547.15,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 0,
-            "skewX": 0,
-            "y": 0,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1,
-            "scaleX": 1,
-            "alpha": 1,
-            "width": 917.75
-          }
-        }
-      ],
-      "type": "asset",
-      "name": "BlockBG"
-    },
-    "Instance7": {
-      "children": [
-        {
-          "type": "img",
-          "name": "Instance7_IMG",
-          "width": 918,
-          "height": 548,
-          "x": 0,
-          "y": 0,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/instance5.png",
-          "filters": {}
-        }
-      ],
-      "type": "asset",
-      "name": "Instance7"
-    },
-    "TextBox": {
-      "children": [
-        {
-          "text": "My name is Brownie, these are my brothers, the chicks,\\n and my mother is the chicken.",
+          "text": "Granny Tales\r",
           "type": "textField",
           "name": "label",
           "x": 0,
           "y": 0,
           "rotation": 0,
-          "width": 701,
-          "height": 52,
+          "width": 314,
+          "height": 120,
           "alpha": 1,
-          "size": 21,
+          "size": 50,
           "align": "center",
           "fontName": "Helvetica",
           "z": 1,
           "stroke": "#000000",
           "strokeThickness": 0,
           "wordWrap": true,
-          "wordWrapWidth": 728,
+          "wordWrapWidth": 950,
           "breakWords": false,
           "leading": 0,
           "letterSpacing": 0,
           "padding": 0,
-          "textAnchorX": 0.5,
+          "textAnchorX": 0,
           "textAnchorY": 0,
           "lineHeight": 0,
           "pivotX": 0,
           "pivotY": 0,
           "lineJoin": "round",
-          "fontWeight": "normal",
+          "fontWeight": "Bold",
           "dropShadow": false,
           "dropShadowAngle": 0.5235987755982988,
           "dropShadowBlur": 0,
@@ -405,90 +153,7 @@
         }
       ],
       "type": "asset",
-      "name": "TextBox"
-    },
-    "Twister": {
-      "children": [
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Instance9",
-          "template": true,
-          "guide": false,
-          "instanceName": "instance9",
-          "filters": {},
-          "portrait": {
-            "height": 244.65,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": -55,
-            "skewX": 0,
-            "y": 30,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1,
-            "scaleX": 1,
-            "alpha": 1,
-            "width": 241
-          },
-          "landscape": {
-            "height": 244.65,
-            "pivotY": 0,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": -55,
-            "skewX": 0,
-            "y": 30,
-            "visible": true,
-            "pivotX": 0,
-            "scaleY": 1,
-            "scaleX": 1,
-            "alpha": 1,
-            "width": 241
-          }
-        }
-      ],
-      "type": "animation",
-      "name": "Twister"
-    },
-    "Instance9": {
-      "children": [
-        {
-          "type": "img",
-          "name": "Instance9_IMG",
-          "width": 241,
-          "height": 240,
-          "x": -67.85,
-          "y": -141.1,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/instance9.png",
-          "filters": {}
-        }
-      ],
-      "type": "asset",
-      "name": "Instance9"
-    },
-    "Instance12": {
-      "children": [
-        {
-          "type": "img",
-          "name": "Instance12_IMG",
-          "width": 1029,
-          "height": 741,
-          "x": 0,
-          "y": -2,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/instance12.png",
-          "filters": {}
-        }
-      ],
-      "type": "asset",
-      "name": "Instance12"
+      "name": "Instance6"
     }
   },
   "fonts": [],
