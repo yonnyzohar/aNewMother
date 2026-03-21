@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { ZScene, ZSceneStack, ZTimeline, ZContainer } from 'zimporter-pixi';
+import { ZScene, ZSceneStack, ZTimeline, ZContainer, ZButton } from 'zimporter-pixi';
 import { GlobalData } from './GlobalData';
 import { MainMenu } from './MainMenu';
 import { safeDestroyScene, unloadSceneImages } from './sceneUtils';
@@ -21,11 +21,14 @@ export class BookController {
     // Overlay: nav buttons drawn with PIXI primitives (no asset required)
     private overlay: PIXI.Container = new PIXI.Container();
     private captionText!: PIXI.Text;
-    private prevBtn!: PIXI.Container;
-    private nextBtn!: PIXI.Container;
+    private prevBtn!: ZButton;
+    private nextBtn!: ZButton;
     private soundBtn!: PIXI.Container;
     private menuBtn!: PIXI.Container;
     private pageIndicator!: PIXI.Text;
+
+    private blockWidth = 918;
+    private blockHeight = 548;
 
     private audio: HTMLAudioElement | null = null;
     private loading = false;
@@ -60,8 +63,10 @@ export class BookController {
     // ─── Overlay ─────────────────────────────────────────────────────────────
 
     private _buildOverlay(): void {
-        this.prevBtn = this._makeNavBtn('◀', () => this._prev());
-        this.nextBtn = this._makeNavBtn('▶', () => this._next());
+        this.prevBtn = this.blockScene!.sceneStage.get('backBTN') as ZButton;
+        this.prevBtn.setCallback(() => this._prev());
+        this.nextBtn = this.blockScene!.sceneStage.get('forewardBTN') as ZButton;
+        this.nextBtn.setCallback(() => this._next());
 
         this.soundBtn = MainMenu.makeTextButton('🔊', 0x1a3a5c, () => this._playSound(), 56, 40);
         this.menuBtn = MainMenu.makeTextButton(
@@ -83,8 +88,6 @@ export class BookController {
         this.pageIndicator = new PIXI.Text('', { fontSize: 14, fill: 0x666666 });
         this.pageIndicator.anchor.set(0.5, 0);
 
-        this.overlay.addChild(this.prevBtn);
-        this.overlay.addChild(this.nextBtn);
         this.overlay.addChild(this.soundBtn);
         this.overlay.addChild(this.menuBtn);
         this.overlay.addChild(this.captionText);
@@ -98,37 +101,26 @@ export class BookController {
     private _positionOverlay(): void {
         if (!this.blockBGContainer) return;
 
-        const b = this.blockBGContainer.getBounds();
-        if (b.width === 0) return;
-
-        const bCY = b.y + b.height / 2;
-
-        // ◀ to the left of blockBG
-        this.prevBtn.x = Math.max(0, b.x - 80);
-        this.prevBtn.y = bCY - 36;
-
-        // ▶ to the right of blockBG
-        this.nextBtn.x = b.x + b.width + 8;
-        this.nextBtn.y = bCY - 36;
+        if (this.stage.parent) this.stage.updateTransform();
 
         // 🔊 top-left corner of blockBG
-        this.soundBtn.x = b.x;
-        this.soundBtn.y = b.y - 50;
+        this.soundBtn.x = this.blockBGContainer.x;
+        this.soundBtn.y = this.blockBGContainer.y - 50;
 
         // Menu top-right corner
-        this.menuBtn.x = b.x + b.width - 92;
-        this.menuBtn.y = b.y - 50;
+        this.menuBtn.x = this.blockBGContainer.x + this.blockWidth - 92;
+        this.menuBtn.y = this.blockBGContainer.y - 50;
 
         // Caption — sits in the Block frame's text area, just below blockBG
         const isHeb = GlobalData.currentLang === 'heb';
-        this.captionText.style.wordWrapWidth = b.width * 0.85;
+        this.captionText.style.wordWrapWidth = this.blockWidth * 0.85;
         this.captionText.style.align = isHeb ? 'right' : 'left';
-        this.captionText.x = isHeb ? b.x + b.width - 20 : b.x + 20;
-        this.captionText.y = b.y + b.height + 8;
+        this.captionText.x = isHeb ? this.blockBGContainer.x + this.blockWidth - 20 : this.blockBGContainer.x + 20;
+        this.captionText.y = this.blockBGContainer.y + this.blockHeight + 8;
 
         // Page indicator centred below caption
-        this.pageIndicator.x = b.x + b.width / 2;
-        this.pageIndicator.y = b.y + b.height + 46;
+        this.pageIndicator.x = this.blockBGContainer.x + this.blockWidth / 2;
+        this.pageIndicator.y = this.blockBGContainer.y + this.blockHeight + 46;
     }
 
     private _makeNavBtn(label: string, onClick: () => void): PIXI.Container {
@@ -163,7 +155,7 @@ export class BookController {
         // path prefix, so many pages collide in the cache.
         if (this.currentPageScene && this.currentPagePath) {
             await unloadSceneImages(this.currentPagePath);
-            this.stage.removeChild(this.currentPageScene.sceneStage);
+            this.blockBGContainer?.removeChild(this.currentPageScene.sceneStage);
             safeDestroyScene(this.currentPageScene);
             this.currentPageScene = null;
             this.currentPagePath = null;
@@ -183,11 +175,31 @@ export class BookController {
             scene.load(pagePath, () => resolve());
         });
 
-        // Load to stage (this scales sceneStage to fill the window by default)
+        // Load to stage first (ZScene requires this to initialise), then
+        // reparent into blockBGContainer so it inherits the frame's transform.
         scene.loadStage(this.stage);
+        
+        let w = Math.max( scene.sceneWidth, scene.sceneHeight);
+        let h = Math.min( scene.sceneWidth, scene.sceneHeight);
 
-        // Override: fit the page inside blockBG
+        let newScaleX = this.blockWidth / w;
+        let newScaleY = this.blockHeight / h;
+        
+        scene.sceneStage.scale.set(newScaleX, newScaleY);
+        //console.log("w",w,"h",h,"this.blockWidth",this.blockWidth,"this.blockHeight",this.blockHeight,"newScaleX",newScaleX,"newScaleY",newScaleY);
+        scene.sceneStage.x = 0;
+        scene.sceneStage.y = 0;
+
+
+        this.blockBGContainer?.addChild(scene.sceneStage);
+        let innerMSK = this.blockBGContainer?.getChildByName("innerMSK") as PIXI.Container;
+        if(innerMSK){
+            scene.sceneStage.mask = innerMSK;
+        }
+
+        // Fit the page to fill blockBGContainer's local coordinate space
         this._fitPageToBlock(scene);
+        this._positionOverlay();
 
         // Overlay must stay on top
         this.stage.setChildIndex(this.overlay, this.stage.children.length - 1);
@@ -213,17 +225,21 @@ export class BookController {
      * overriding the default window-filling scale set by loadStage().
      */
     private _fitPageToBlock(scene: ZScene): void {
+        /*
         if (!this.blockBGContainer) return;
-        const b = this.blockBGContainer.getBounds();
-        if (!b || b.width === 0 || b.height === 0) return;
+
+        // Use local bounds — the parent transform handles screen placement.
+        const lb = this.blockBGContainer.getLocalBounds();
+        if (!lb || lb.width === 0 || lb.height === 0) return;
 
         const pageW = scene.sceneWidth;
         const pageH = scene.sceneHeight;
-        const scale = Math.min(b.width / pageW, b.height / pageH);
+        const scale = Math.max(lb.width / pageW, lb.height / pageH);
         const stg = scene.sceneStage;
         stg.scale.set(scale);
-        stg.x = b.x + (b.width - pageW * scale) / 2;
-        stg.y = b.y + (b.height - pageH * scale) / 2;
+        stg.x = lb.x + (lb.width - pageW * scale) / 2;
+        stg.y = lb.y + (lb.height - pageH * scale) / 2;
+        */
     }
 
     private _playTimelines(container: PIXI.Container): void {
@@ -298,7 +314,7 @@ export class BookController {
         this._stopAudio();
 
         if (this.currentPageScene) {
-            this.stage.removeChild(this.currentPageScene.sceneStage);
+            this.stage?.removeChild(this.currentPageScene.sceneStage);
             safeDestroyScene(this.currentPageScene);
             this.currentPageScene = null;
             this.currentPagePath = null;
