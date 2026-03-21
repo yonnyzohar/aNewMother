@@ -46,6 +46,108 @@
           "height": 742.2,
           "pivotY": 0
         }
+      },
+      {
+        "portrait": {
+          "x": 51,
+          "y": 468,
+          "rotation": 0,
+          "scaleX": 0.2,
+          "scaleY": 0.2,
+          "alpha": 1,
+          "pivotX": 206.5,
+          "pivotY": 176,
+          "visible": true,
+          "isAnchored": true,
+          "anchorLocalPercentage": {
+            "x": 0,
+            "y": 0
+          },
+          "anchorType": "center",
+          "anchorPercentage": {
+            "x": 0.06891891891891902,
+            "y": 0.4570312499999998
+          }
+        },
+        "landscape": {
+          "x": 51,
+          "y": 349,
+          "rotation": 0,
+          "scaleX": 0.2,
+          "scaleY": 0.2,
+          "alpha": 1,
+          "pivotX": 206.5,
+          "pivotY": 176,
+          "visible": true,
+          "isAnchored": true,
+          "anchorLocalPercentage": {
+            "x": 0,
+            "y": 0
+          },
+          "anchorType": "center",
+          "anchorPercentage": {
+            "x": 0.04980468750000009,
+            "y": 0.47162162162162147
+          }
+        },
+        "type": "btn",
+        "name": "BTNTemplate",
+        "guide": false,
+        "template": true,
+        "instanceName": "backBTN",
+        "editorOnly": false,
+        "filters": {}
+      },
+      {
+        "portrait": {
+          "x": 686,
+          "y": 468,
+          "rotation": 3.12,
+          "scaleX": 0.2,
+          "scaleY": 0.2,
+          "alpha": 1,
+          "pivotX": 206.5,
+          "pivotY": 176,
+          "visible": true,
+          "isAnchored": true,
+          "anchorLocalPercentage": {
+            "x": 0,
+            "y": 0
+          },
+          "anchorType": "center",
+          "anchorPercentage": {
+            "x": 0.9270270270270269,
+            "y": 0.4570312499999998
+          }
+        },
+        "landscape": {
+          "x": 974,
+          "y": 349,
+          "rotation": 3.12,
+          "scaleX": 0.2,
+          "scaleY": 0.2,
+          "alpha": 1,
+          "pivotX": 206.5,
+          "pivotY": 176,
+          "visible": true,
+          "isAnchored": true,
+          "anchorLocalPercentage": {
+            "x": 0,
+            "y": 0
+          },
+          "anchorType": "center",
+          "anchorPercentage": {
+            "x": 0.9511718750000001,
+            "y": 0.47162162162162147
+          }
+        },
+        "type": "btn",
+        "name": "BTNTemplate",
+        "guide": false,
+        "template": true,
+        "instanceName": "forewardBTN",
+        "editorOnly": false,
+        "filters": {}
       }
     ],
     "type": "Container",
@@ -166,7 +268,7 @@
             "isAnchored": false,
             "skewY": 0,
             "rotation": 0,
-            "x": 150,
+            "x": 519,
             "scaleX": 1,
             "y": 617,
             "visible": true,
@@ -186,36 +288,44 @@
           "instanceName": "twister",
           "filters": {},
           "portrait": {
-            "skewX": 0,
-            "width": 241,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 507,
-            "scaleX": 0.28,
+            "x": 497,
             "y": 336,
-            "visible": true,
+            "rotation": 0,
+            "scaleX": 0.28,
             "scaleY": 0.28,
-            "pivotX": 0,
             "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 241,
             "height": 244.64999999999998,
-            "pivotY": 0
+            "skewX": 0,
+            "skewY": 0
           },
           "landscape": {
-            "skewX": 0,
-            "width": 241,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
             "x": 507,
-            "scaleX": 0.28,
             "y": 336,
-            "visible": true,
+            "rotation": 0,
+            "scaleX": 0.28,
             "scaleY": 0.28,
-            "pivotX": 0,
             "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 241,
             "height": 244.64999999999998,
-            "pivotY": 0
+            "skewX": 0,
+            "skewY": 0
           },
           "playOnStart": true
         },
@@ -290,7 +400,7 @@
           "name": "Instance7",
           "template": true,
           "guide": false,
-          "instanceName": "instance7",
+          "instanceName": "innerMSK",
           "filters": {},
           "portrait": {
             "skewX": 0,
@@ -350,16 +460,16 @@
     "TextBox": {
       "children": [
         {
-          "text": "",
+          "text": "The search for a new Mother",
           "type": "textField",
           "name": "label",
           "x": 0,
           "y": 0,
           "rotation": 0,
-          "width": 1,
-          "height": 39,
+          "width": 320,
+          "height": 31,
           "alpha": 1,
-          "size": 33,
+          "size": 25,
           "align": "center",
           "fontName": "Helvetica",
           "z": 1,
@@ -371,7 +481,7 @@
           "leading": 0,
           "letterSpacing": 0,
           "padding": 0,
-          "textAnchorX": 0,
+          "textAnchorX": 0.5,
           "textAnchorY": 0,
           "lineHeight": 0,
           "pivotX": 0,
@@ -473,6 +583,24 @@
       ],
       "type": "asset",
       "name": "Instance12"
+    },
+    "BTNTemplate": {
+      "type": "btn",
+      "name": "BTNTemplate",
+      "children": [
+        {
+          "type": "img",
+          "name": "BTNTemplate_IMG",
+          "width": 413,
+          "height": 352,
+          "x": 0,
+          "y": 0,
+          "pivotX": 0,
+          "pivotY": 0,
+          "filePath": "images/zs_gen_1774133515582.png",
+          "filters": {}
+        }
+      ]
     }
   },
   "fonts": [],
