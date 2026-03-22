@@ -25,15 +25,18 @@ export class AboutScreen {
         const ss = this.scene.sceneStage;
 
         ss.get('aboutTopTitleTXT')?.setText(L['about'] ?? 'About');
-        ss.get('aboutTXTArea')?.setText(L['aboutcontents'] ?? '');
+        ss.get('myText')?.setText(L['aboutcontents'] ?? '');
 
         const xBtn = ss.get('xButton') as ZButton | null;
-        xBtn?.setCallback(() => this._close());
+        if (xBtn) {
+            
+            xBtn.setCallback( () => this._close());
+        }
     }
 
     private _close(): void {
-        const xBtn = this.scene.sceneStage.get('xButton') as ZButton | null;
-        xBtn?.removeCallback();
+        const xBtn = this.scene.sceneStage.get('xButton');
+        if (xBtn) xBtn.removeAllListeners();
 
         ZSceneStack.pop();
         this.stage.removeChild(this.scene.sceneStage);
