@@ -127,15 +127,43 @@ export class BookController {
 
     // ─── Page loading ─────────────────────────────────────────────────────────
 
+    private _setButtonsDisabled(disabled: boolean): void {
+        const btns:ZButton[] = [this.prevBtn, this.nextBtn, this.soundBtn, this.menuBtn];
+        for (const btn of btns) {
+            if (!btn) continue;
+            if(disabled){
+                btn.disable();
+            }
+            else{
+                btn.enable();
+            }
+        }
+    }
+
     private async _loadPage(index: number): Promise<void> {
         if (this.loading) return;
         this.loading = true;
         this.twister.setVisible(true);
+        this._setButtonsDisabled(true);
         this._stopAudio();
 
-        // Unload old page's image aliases from PIXI cache before destroying.
-        // Image-based scenes register short aliases (e.g. "BodyMC1") with no
-        // path prefix, so many pages collide in the cache.
+        const slide = GlobalData.pages[index];
+        if (!slide) {
+            console.warn(`BookController: no slide at index ${index}`);
+            this.loading = false;
+            this._setButtonsDisabled(false);
+            this.twister.setVisible(false);
+            return;
+        }
+
+        // ── 1. Load the new scene in the background ───────────────────────────
+        const pagePath = GlobalData.getPagePath(slide.pageNum);
+        const scene = new ZScene(`page_${slide.pageNum}`);
+        await new Promise<void>(resolve => {
+            scene.load(pagePath, () => resolve());
+        });
+
+        // ── 2. Now that the new scene is ready, tear down the old one ─────────
         if (this.currentPageScene && this.currentPagePath) {
             await unloadSceneImages(this.currentPagePath);
             this.blockBGContainer?.removeChild(this.currentPageScene.sceneStage);
@@ -148,20 +176,6 @@ export class BookController {
             this.pageMask.destroy();
             this.pageMask = null;
         }
-
-        const slide = GlobalData.pages[index];
-        if (!slide) {
-            console.warn(`BookController: no slide at index ${index}`);
-            this.loading = false;
-            return;
-        }
-
-        const pagePath = GlobalData.getPagePath(slide.pageNum);
-        const scene = new ZScene(`page_${slide.pageNum}`);
-
-        await new Promise<void>(resolve => {
-            scene.load(pagePath, () => resolve());
-        });
         
         // Load to stage first (ZScene requires this to initialise), then
         // reparent into blockBGContainer so it inherits the frame's transform.
@@ -213,6 +227,10 @@ export class BookController {
         this.prevBtn.visible = index > 0;
 
         this.loading = false;
+        this._setButtonsDisabled(false);
+        // Re-register nav callbacks (they were removed when buttons were disabled)
+        this.prevBtn?.setCallback(() => this._prev());
+        this.nextBtn?.setCallback(() => this._next());
         this._playSound();
         this.twister.setVisible(false);
     }
