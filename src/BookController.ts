@@ -331,8 +331,8 @@ export class BookController {
         this.prevBtn.visible = index > 0;
         this.loading = false;
         this._setButtonsDisabled(false);
-        this.prevBtn?.setCallback(() => this._prev());
-        this.nextBtn?.setCallback(() => this._next());
+        this.prevBtn?.setCallback(() => { GlobalData.playUiSound('xClose.mp3');this._prev(); });
+        this.nextBtn?.setCallback(() => { GlobalData.playUiSound('xClose.mp3');this._next(); });
         this._playSound();
         this.twister.setVisible(false);
     }
