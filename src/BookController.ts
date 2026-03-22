@@ -326,7 +326,6 @@ export class BookController {
                 } 
                 console.log(`BookController: attached voice handler for "${mcName}" → ${voicePath}`);
                 mc.interactive = true;
-                mc.interactiveChildren = true;
                 mc.cursor = 'pointer';
                 let callback = (event: PIXI.FederatedPointerEvent) => {
                     this._stopVoice();

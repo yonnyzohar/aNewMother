@@ -4048,207 +4048,6 @@
       {},
       {}
     ],
-    "chick2_MC_Chick2": [
-      {
-        "chilName": "chick2_MC",
-        "parentTemplate": "Chick2",
-        "x": -90,
-        "y": -113,
-        "alpha": 1,
-        "keyFrame": true,
-        "currentFrame": 0,
-        "endFrame": 28,
-        "pivotX": 0,
-        "pivotY": 0,
-        "rotation": 0,
-        "scaleX": 1,
-        "scaleY": 1,
-        "skewX": 0,
-        "skewY": 0,
-        "easing": "none"
-      },
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {
-        "y": -114,
-        "scaleY": 1.0070648193359375,
-        "keyFrame": true,
-        "currentFrame": 29,
-        "endFrame": 29,
-        "easing": "none"
-      },
-      {
-        "y": -116,
-        "scaleY": 1.014129638671875,
-        "keyFrame": true,
-        "currentFrame": 30,
-        "endFrame": 30,
-        "easing": "none"
-      },
-      {
-        "y": -117,
-        "scaleY": 1.0211944580078125,
-        "keyFrame": true,
-        "currentFrame": 31,
-        "endFrame": 31,
-        "easing": "none"
-      },
-      {
-        "y": -119,
-        "scaleY": 1.02825927734375,
-        "keyFrame": true,
-        "currentFrame": 32,
-        "endFrame": 32,
-        "easing": "none"
-      },
-      {
-        "y": -120,
-        "scaleY": 1.0353240966796875,
-        "keyFrame": true,
-        "currentFrame": 33,
-        "endFrame": 33,
-        "easing": "none"
-      },
-      {
-        "y": -119,
-        "scaleY": 1.028228759765625,
-        "keyFrame": true,
-        "currentFrame": 34,
-        "endFrame": 34,
-        "easing": "none"
-      },
-      {
-        "y": -117,
-        "scaleY": 1.0211639404296875,
-        "keyFrame": true,
-        "currentFrame": 35,
-        "endFrame": 35,
-        "easing": "none"
-      },
-      {
-        "y": -115,
-        "scaleY": 1.01409912109375,
-        "keyFrame": true,
-        "currentFrame": 36,
-        "endFrame": 36,
-        "easing": "none"
-      },
-      {
-        "y": -114,
-        "scaleY": 1.0070343017578125,
-        "keyFrame": true,
-        "currentFrame": 37,
-        "endFrame": 37,
-        "easing": "none"
-      },
-      {
-        "y": -113,
-        "scaleY": 1,
-        "keyFrame": true,
-        "currentFrame": 38,
-        "endFrame": 39,
-        "easing": "none"
-      },
-      {},
-      {
-        "y": -114,
-        "scaleY": 1.0070648193359375,
-        "keyFrame": true,
-        "currentFrame": 40,
-        "endFrame": 40,
-        "easing": "none"
-      },
-      {
-        "y": -116,
-        "scaleY": 1.014129638671875,
-        "keyFrame": true,
-        "currentFrame": 41,
-        "endFrame": 41,
-        "easing": "none"
-      },
-      {
-        "y": -117,
-        "scaleY": 1.0211944580078125,
-        "keyFrame": true,
-        "currentFrame": 42,
-        "endFrame": 42,
-        "easing": "none"
-      },
-      {
-        "y": -119,
-        "scaleY": 1.02825927734375,
-        "keyFrame": true,
-        "currentFrame": 43,
-        "endFrame": 43,
-        "easing": "none"
-      },
-      {
-        "y": -120,
-        "scaleY": 1.0353240966796875,
-        "keyFrame": true,
-        "currentFrame": 44,
-        "endFrame": 44,
-        "easing": "none"
-      },
-      {
-        "y": -119,
-        "scaleY": 1.028228759765625,
-        "keyFrame": true,
-        "currentFrame": 45,
-        "endFrame": 45,
-        "easing": "none"
-      },
-      {
-        "y": -117,
-        "scaleY": 1.0211639404296875,
-        "keyFrame": true,
-        "currentFrame": 46,
-        "endFrame": 46,
-        "easing": "none"
-      },
-      {
-        "y": -115,
-        "scaleY": 1.01409912109375,
-        "keyFrame": true,
-        "currentFrame": 47,
-        "endFrame": 47,
-        "easing": "none"
-      },
-      {
-        "y": -114,
-        "scaleY": 1.0070343017578125,
-        "keyFrame": true,
-        "currentFrame": 48,
-        "endFrame": 48,
-        "easing": "none"
-      }
-    ],
     "black_MC_Black": [
       {
         "chilName": "black_MC",
@@ -5113,6 +4912,207 @@
         "endFrame": 113,
         "easing": "none"
       }
+    ],
+    "chick2_MC_Chick2": [
+      {
+        "chilName": "chick2_MC",
+        "parentTemplate": "Chick2",
+        "x": -90,
+        "y": -113,
+        "alpha": 1,
+        "keyFrame": true,
+        "currentFrame": 0,
+        "endFrame": 28,
+        "pivotX": 0,
+        "pivotY": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "skewX": 0,
+        "skewY": 0,
+        "easing": "none"
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "y": -114,
+        "scaleY": 1.0070648193359375,
+        "keyFrame": true,
+        "currentFrame": 29,
+        "endFrame": 29,
+        "easing": "none"
+      },
+      {
+        "y": -116,
+        "scaleY": 1.014129638671875,
+        "keyFrame": true,
+        "currentFrame": 30,
+        "endFrame": 30,
+        "easing": "none"
+      },
+      {
+        "y": -117,
+        "scaleY": 1.0211944580078125,
+        "keyFrame": true,
+        "currentFrame": 31,
+        "endFrame": 31,
+        "easing": "none"
+      },
+      {
+        "y": -119,
+        "scaleY": 1.02825927734375,
+        "keyFrame": true,
+        "currentFrame": 32,
+        "endFrame": 32,
+        "easing": "none"
+      },
+      {
+        "y": -120,
+        "scaleY": 1.0353240966796875,
+        "keyFrame": true,
+        "currentFrame": 33,
+        "endFrame": 33,
+        "easing": "none"
+      },
+      {
+        "y": -119,
+        "scaleY": 1.028228759765625,
+        "keyFrame": true,
+        "currentFrame": 34,
+        "endFrame": 34,
+        "easing": "none"
+      },
+      {
+        "y": -117,
+        "scaleY": 1.0211639404296875,
+        "keyFrame": true,
+        "currentFrame": 35,
+        "endFrame": 35,
+        "easing": "none"
+      },
+      {
+        "y": -115,
+        "scaleY": 1.01409912109375,
+        "keyFrame": true,
+        "currentFrame": 36,
+        "endFrame": 36,
+        "easing": "none"
+      },
+      {
+        "y": -114,
+        "scaleY": 1.0070343017578125,
+        "keyFrame": true,
+        "currentFrame": 37,
+        "endFrame": 37,
+        "easing": "none"
+      },
+      {
+        "y": -113,
+        "scaleY": 1,
+        "keyFrame": true,
+        "currentFrame": 38,
+        "endFrame": 39,
+        "easing": "none"
+      },
+      {},
+      {
+        "y": -114,
+        "scaleY": 1.0070648193359375,
+        "keyFrame": true,
+        "currentFrame": 40,
+        "endFrame": 40,
+        "easing": "none"
+      },
+      {
+        "y": -116,
+        "scaleY": 1.014129638671875,
+        "keyFrame": true,
+        "currentFrame": 41,
+        "endFrame": 41,
+        "easing": "none"
+      },
+      {
+        "y": -117,
+        "scaleY": 1.0211944580078125,
+        "keyFrame": true,
+        "currentFrame": 42,
+        "endFrame": 42,
+        "easing": "none"
+      },
+      {
+        "y": -119,
+        "scaleY": 1.02825927734375,
+        "keyFrame": true,
+        "currentFrame": 43,
+        "endFrame": 43,
+        "easing": "none"
+      },
+      {
+        "y": -120,
+        "scaleY": 1.0353240966796875,
+        "keyFrame": true,
+        "currentFrame": 44,
+        "endFrame": 44,
+        "easing": "none"
+      },
+      {
+        "y": -119,
+        "scaleY": 1.028228759765625,
+        "keyFrame": true,
+        "currentFrame": 45,
+        "endFrame": 45,
+        "easing": "none"
+      },
+      {
+        "y": -117,
+        "scaleY": 1.0211639404296875,
+        "keyFrame": true,
+        "currentFrame": 46,
+        "endFrame": 46,
+        "easing": "none"
+      },
+      {
+        "y": -115,
+        "scaleY": 1.01409912109375,
+        "keyFrame": true,
+        "currentFrame": 47,
+        "endFrame": 47,
+        "easing": "none"
+      },
+      {
+        "y": -114,
+        "scaleY": 1.0070343017578125,
+        "keyFrame": true,
+        "currentFrame": 48,
+        "endFrame": 48,
+        "easing": "none"
+      }
     ]
   },
   "stage": {
@@ -5328,48 +5328,6 @@
       {
         "type": "animation",
         "editorOnly": false,
-        "name": "Chick2",
-        "template": true,
-        "guide": false,
-        "instanceName": "chick5MC",
-        "filters": {},
-        "portrait": {
-          "visible": true,
-          "scaleX": 0.89,
-          "isAnchored": false,
-          "scaleY": 0.68,
-          "pivotX": 0,
-          "width": 165,
-          "skewX": 0,
-          "y": 414,
-          "x": 735,
-          "height": 216,
-          "rotation": 0,
-          "alpha": 1,
-          "pivotY": 0,
-          "skewY": 0
-        },
-        "landscape": {
-          "visible": true,
-          "scaleX": 0.89,
-          "isAnchored": false,
-          "scaleY": 0.68,
-          "pivotX": 0,
-          "width": 165,
-          "skewX": 0,
-          "y": 414,
-          "x": 735,
-          "height": 216,
-          "rotation": 0,
-          "alpha": 1,
-          "pivotY": 0,
-          "skewY": 0
-        },
-        "playOnStart": true
-      },
-      {
-        "type": "animation",
-        "editorOnly": false,
         "name": "Black",
         "template": true,
         "guide": false,
@@ -5444,6 +5402,48 @@
           "y": 434,
           "x": 520,
           "height": 247.35000000000002,
+          "rotation": 0,
+          "alpha": 1,
+          "pivotY": 0,
+          "skewY": 0
+        },
+        "playOnStart": true
+      },
+      {
+        "type": "animation",
+        "editorOnly": false,
+        "name": "Chick2",
+        "template": true,
+        "guide": false,
+        "instanceName": "chick5MC",
+        "filters": {},
+        "portrait": {
+          "visible": true,
+          "scaleX": 0.89,
+          "isAnchored": false,
+          "scaleY": 0.68,
+          "pivotX": 0,
+          "width": 165,
+          "skewX": 0,
+          "y": 414,
+          "x": 735,
+          "height": 216,
+          "rotation": 0,
+          "alpha": 1,
+          "pivotY": 0,
+          "skewY": 0
+        },
+        "landscape": {
+          "visible": true,
+          "scaleX": 0.89,
+          "isAnchored": false,
+          "scaleY": 0.68,
+          "pivotX": 0,
+          "width": 165,
+          "skewX": 0,
+          "y": 414,
+          "x": 735,
+          "height": 216,
           "rotation": 0,
           "alpha": 1,
           "pivotY": 0,
@@ -8732,259 +8732,6 @@
       "type": "asset",
       "name": "Chick3wingMC9"
     },
-    "Chick2": {
-      "children": [
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Chick2_MC",
-          "template": true,
-          "guide": false,
-          "instanceName": "chick2_MC",
-          "filters": {},
-          "portrait": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": -113,
-            "x": -90,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          },
-          "landscape": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": -113,
-            "x": -90,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          }
-        }
-      ],
-      "type": "animation",
-      "name": "Chick2"
-    },
-    "Chick2_MC": {
-      "children": [
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Chick2_MC1",
-          "template": true,
-          "guide": false,
-          "instanceName": "chick2_MC1",
-          "filters": {},
-          "portrait": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          },
-          "landscape": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          }
-        }
-      ],
-      "type": "asset",
-      "name": "Chick2_MC"
-    },
-    "Chick2_MC1": {
-      "children": [
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Chick2_MC2",
-          "template": true,
-          "guide": false,
-          "instanceName": "chick2_MC2",
-          "filters": {},
-          "portrait": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          },
-          "landscape": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          }
-        }
-      ],
-      "type": "asset",
-      "name": "Chick2_MC1"
-    },
-    "Chick2_MC2": {
-      "children": [
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Chick2MC3",
-          "template": true,
-          "guide": false,
-          "instanceName": "chick2MC3",
-          "filters": {},
-          "portrait": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          },
-          "landscape": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          }
-        }
-      ],
-      "type": "asset",
-      "name": "Chick2_MC2"
-    },
-    "Chick2MC3": {
-      "children": [
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Chick2MC4",
-          "template": true,
-          "guide": false,
-          "instanceName": "chick2MC4",
-          "filters": {},
-          "portrait": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          },
-          "landscape": {
-            "visible": true,
-            "scaleX": 1,
-            "isAnchored": false,
-            "scaleY": 1,
-            "pivotX": 0,
-            "width": 165,
-            "skewX": 0,
-            "y": 0,
-            "x": 0,
-            "height": 216,
-            "rotation": 0,
-            "alpha": 1,
-            "pivotY": 0,
-            "skewY": 0
-          }
-        }
-      ],
-      "type": "asset",
-      "name": "Chick2MC3"
-    },
-    "Chick2MC4": {
-      "children": [
-        {
-          "type": "img",
-          "name": "Chick2MC4_IMG",
-          "width": 165,
-          "height": 217,
-          "x": 0,
-          "y": 0,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/Chick2MC4.png",
-          "filters": {}
-        }
-      ],
-      "type": "asset",
-      "name": "Chick2MC4"
-    },
     "Black": {
       "children": [
         {
@@ -9537,6 +9284,126 @@
       ],
       "type": "asset",
       "name": "Chick1MC4"
+    },
+    "Chick2": {
+      "children": [
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Chick2_MC",
+          "template": true,
+          "guide": false,
+          "instanceName": "chick2_MC",
+          "filters": {},
+          "portrait": {
+            "visible": true,
+            "scaleX": 1,
+            "isAnchored": false,
+            "scaleY": 1,
+            "pivotX": 0,
+            "width": 165,
+            "skewX": 0,
+            "y": -113,
+            "x": -90,
+            "height": 216,
+            "rotation": 0,
+            "alpha": 1,
+            "pivotY": 0,
+            "skewY": 0
+          },
+          "landscape": {
+            "visible": true,
+            "scaleX": 1,
+            "isAnchored": false,
+            "scaleY": 1,
+            "pivotX": 0,
+            "width": 165,
+            "skewX": 0,
+            "y": -113,
+            "x": -90,
+            "height": 216,
+            "rotation": 0,
+            "alpha": 1,
+            "pivotY": 0,
+            "skewY": 0
+          }
+        }
+      ],
+      "type": "animation",
+      "name": "Chick2"
+    },
+    "Chick2_MC": {
+      "children": [
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Chick2MC4",
+          "template": true,
+          "guide": false,
+          "instanceName": "chick2MC4",
+          "filters": {},
+          "portrait": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 165,
+            "height": 216,
+            "skewX": 0,
+            "skewY": 0
+          },
+          "landscape": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 165,
+            "height": 216,
+            "skewX": 0,
+            "skewY": 0
+          }
+        }
+      ],
+      "type": "asset",
+      "name": "Chick2_MC"
+    },
+    "Chick2MC4": {
+      "children": [
+        {
+          "type": "img",
+          "name": "Chick2MC4_IMG",
+          "width": 165,
+          "height": 217,
+          "x": 0,
+          "y": 0,
+          "pivotX": 0,
+          "pivotY": 0,
+          "filePath": "images/Chick2MC4.png",
+          "filters": {}
+        }
+      ],
+      "type": "asset",
+      "name": "Chick2MC4"
     }
   },
   "fonts": [],
