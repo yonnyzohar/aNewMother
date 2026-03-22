@@ -21,6 +21,7 @@ export class BookController {
     // its scale/position manually so ZSceneStack.resize() doesn't fight us)
     private currentPageScene: ZScene | null = null;
     private currentPagePath: string | null = null;
+    private tween: gsap.core.Tween | null = null;
 
     private prevBtn!: ZButton;
     private nextBtn!: ZButton;
@@ -37,7 +38,7 @@ export class BookController {
     private loading = false;
     private pageMask: PIXI.Graphics | null = null;
 
-    private circle:PIXI.Graphics = new PIXI.Graphics();
+    
 
     constructor(stage: PIXI.Container, onBack: () => void) {
         this.stage = stage;
@@ -84,21 +85,24 @@ export class BookController {
         let blockMaster = this.blockScene.sceneStage.get("blockMaster") as ZContainer;
         let circleContainer = this.blockScene.sceneStage.get("circleContainer") as ZContainer;
 
-        this.circle.beginFill(0x000000,1);
-        this.circle.drawCircle(0,0,50);
-        this.circle.endFill();
-        circleContainer.addChild(this.circle);
-        blockMaster.mask = this.circle;
+        let circle:PIXI.Graphics = new PIXI.Graphics();
+        circle.beginFill(0x000000,1);
+        circle.drawCircle(0,0,50);
+        circle.endFill();
+        circleContainer.addChild(circle);
+        blockMaster.mask = circle;
+        if(this.tween) this.tween.kill();
         
         // Tween a PIXI display object's properties over 0.5 seconds
-        gsap.to(circleContainer.scale, {
+        this.tween = gsap.to(circle.scale, {
             duration: 2,
             x: 20,
             y: 20,
             ease: 'power2.out',
             onComplete: () =>{
                 blockMaster.mask = null;
-                circleContainer.removeChild(this.circle);
+                circleContainer.removeChild(circle);
+                this.tween = null;
             } ,
         });
     }
@@ -278,8 +282,33 @@ export class BookController {
     private _goBack(): void {
         this._stopAudio();
         GlobalData.playUiSound('stop.mp3');
-        this.destroy();
-        this.onBack();
+        let blockMaster = this.blockScene!.sceneStage.get("blockMaster") as ZContainer;
+        let circleContainer = this.blockScene!.sceneStage.get("circleContainer") as ZContainer;
+
+        let circle:PIXI.Graphics = new PIXI.Graphics();
+        circle.beginFill(0x000000,1);
+        circle.drawCircle(0,0,50);
+        circle.endFill();
+        circle.scale.set(20,20);
+        circleContainer.addChild(circle);
+        blockMaster.mask = circle;
+        if(this.tween) this.tween.kill();
+        
+        // Tween a PIXI display object's properties over 0.5 seconds
+        this.tween = gsap.to(circle.scale, {
+            duration: 2,
+            x: 0,
+            y: 0,
+            ease: 'power2.out',
+            onComplete: () =>{
+                this.tween = null;
+                blockMaster.mask = null;
+                circleContainer.removeChild(circle);
+                this.destroy();
+                this.onBack();
+            } ,
+        });
+        
     }
 
     // ─── Voice handlers ───────────────────────────────────────────────────────
