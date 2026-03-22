@@ -194,7 +194,7 @@ export class BookController {
         this.blockBGContainer?.addChild(scene.sceneStage);
         let innerMSK = this.blockBGContainer?.getChildByName("innerMSK") as PIXI.Container;
         if(innerMSK){
-            scene.sceneStage.mask = innerMSK;
+            //scene.sceneStage.mask = innerMSK;
         }
 
         // Fit the page to fill blockBGContainer's local coordinate space
@@ -320,17 +320,28 @@ export class BookController {
             for (const [mcName, voicePath] of Object.entries(slide.voices)) {
                 const mc = sceneStage.get(mcName);
                 
-                if (!mc) continue;
+                if (!mc){
+                    console.warn(`BookController: voice MC "${mcName}" not found on page ${slide.pageNum}`);
+                    continue;
+                } 
+                console.log(`BookController: attached voice handler for "${mcName}" → ${voicePath}`);
                 mc.interactive = true;
                 mc.interactiveChildren = true;
+                mc.cursor = 'pointer';
                 let callback = (event: PIXI.FederatedPointerEvent) => {
-                
                     this._stopVoice();
                     const url = `${GlobalData.assetsBasePath}${voicePath}`;
                     this.voiceAudio = new Audio(url);
                     this.voiceAudio.play().catch(e => console.warn(`Voice play error (${mcName}):`, e));
-                    return;
-                
+
+                    // Momentary highlight: yellow color matrix filter
+                    const cmf = new PIXI.filters.ColorMatrixFilter();
+                    cmf.tint(0xffee88, false);
+                    mc.filters = [...(mc.filters ?? []), cmf];
+                    setTimeout(() => {
+                        mc.filters = (mc.filters ?? []).filter(f => f !== cmf);
+                        cmf.destroy();
+                    }, 200);
                 };
                 mc.on('mousedown', callback);
                 mc.on('touchstart', callback);  
