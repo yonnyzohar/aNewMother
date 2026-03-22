@@ -67,6 +67,9 @@ export class BookController {
         const filmSides = this.blockScene.sceneStage.get('filmSides');
         if (filmSides) filmSides.eventMode = 'none';
 
+        //FilmSlidesTemplate
+        //BlockBG
+
         // blockContainer sits between sceneStage and blockBG — must be passive
         // so events can propagate all the way in to the page children.
         const blockContainer = this.blockScene.sceneStage.get('blockContainer');
@@ -209,8 +212,6 @@ export class BookController {
             this.pageMask = gfxMask;
         }
 
-        // Fit the page to fill blockBGContainer's local coordinate space
-        this._fitPageToBlock(scene);
 
         // Play all timeline animations within the page
         this._playTimelines(scene.sceneStage);
@@ -233,28 +234,6 @@ export class BookController {
         this.nextBtn?.setCallback(() => this._next());
         this._playSound();
         this.twister.setVisible(false);
-    }
-
-    /**
-     * Scales and positions the page's sceneStage to fill blockBG exactly,
-     * overriding the default window-filling scale set by loadStage().
-     */
-    private _fitPageToBlock(scene: ZScene): void {
-        /*
-        if (!this.blockBGContainer) return;
-
-        // Use local bounds — the parent transform handles screen placement.
-        const lb = this.blockBGContainer.getLocalBounds();
-        if (!lb || lb.width === 0 || lb.height === 0) return;
-
-        const pageW = scene.sceneWidth;
-        const pageH = scene.sceneHeight;
-        const scale = Math.max(lb.width / pageW, lb.height / pageH);
-        const stg = scene.sceneStage;
-        stg.scale.set(scale);
-        stg.x = lb.x + (lb.width - pageW * scale) / 2;
-        stg.y = lb.y + (lb.height - pageH * scale) / 2;
-        */
     }
 
     private _playTimelines(container: PIXI.Container): void {

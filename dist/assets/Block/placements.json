@@ -454,7 +454,7 @@
       {
         "type": "asset",
         "editorOnly": false,
-        "name": "Templategpj3",
+        "name": "BlockTemplate",
         "template": true,
         "guide": false,
         "instanceName": "blockMaster",
@@ -538,12 +538,12 @@
     "name": "stage"
   },
   "templates": {
-    "Templategpj3": {
+    "BlockTemplate": {
       "children": [
         {
           "type": "asset",
           "editorOnly": false,
-          "name": "Instance4",
+          "name": "BlockContainerTemplate",
           "template": true,
           "guide": false,
           "instanceName": "blockContainer",
@@ -755,9 +755,9 @@
         }
       ],
       "type": "asset",
-      "name": "Templategpj3"
+      "name": "BlockTemplate"
     },
-    "Instance4": {
+    "BlockContainerTemplate": {
       "children": [
         {
           "type": "asset",
@@ -1024,7 +1024,7 @@
         }
       ],
       "type": "asset",
-      "name": "Instance4"
+      "name": "BlockContainerTemplate"
     },
     "Instance5": {
       "children": [
