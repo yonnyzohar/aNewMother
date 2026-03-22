@@ -21,7 +21,6 @@ export class BookController {
 
     // Overlay: nav buttons drawn with PIXI primitives (no asset required)
     private overlay: PIXI.Container = new PIXI.Container();
-    private captionText!: PIXI.Text;
     private prevBtn!: ZButton;
     private nextBtn!: ZButton;
     private soundBtn!: PIXI.Container;
@@ -95,21 +94,11 @@ export class BookController {
             90,
             40,
         );
-
-        this.captionText = new PIXI.Text('', {
-            fontSize: 18,
-            fill: 0x222222,
-            wordWrap: true,
-            wordWrapWidth: 600,
-            align: GlobalData.currentLang === 'heb' ? 'right' : 'left',
-        });
-
         this.pageIndicator = new PIXI.Text('', { fontSize: 14, fill: 0x666666 });
         this.pageIndicator.anchor.set(0.5, 0);
 
         this.overlay.addChild(this.soundBtn);
         this.overlay.addChild(this.menuBtn);
-        this.overlay.addChild(this.captionText);
         this.overlay.addChild(this.pageIndicator);
 
         this.stage.addChild(this.overlay);
@@ -132,10 +121,6 @@ export class BookController {
 
         // Caption — sits in the Block frame's text area, just below blockBG
         const isHeb = GlobalData.currentLang === 'heb';
-        this.captionText.style.wordWrapWidth = this.blockWidth * 0.85;
-        this.captionText.style.align = isHeb ? 'right' : 'left';
-        this.captionText.x = isHeb ? this.blockBGContainer.x + this.blockWidth - 20 : this.blockBGContainer.x + 20;
-        this.captionText.y = this.blockBGContainer.y + this.blockHeight + 8;
 
         // Page indicator centred below caption
         this.pageIndicator.x = this.blockBGContainer.x + this.blockWidth / 2;
@@ -147,7 +132,7 @@ export class BookController {
     private async _loadPage(index: number): Promise<void> {
         if (this.loading) return;
         this.loading = true;
-        this.twister.visible = true;
+        this.twister.setVisible(true);
         this._stopAudio();
 
         // Unload old page's image aliases from PIXI cache before destroying.
@@ -215,13 +200,12 @@ export class BookController {
 
         // Set caption in Block's textBox (if it accepts text) AND in overlay
         this.textBoxContainer?.setText(slide.caption);
-        this.captionText.text = slide.caption;
         this.pageIndicator.text = `${index + 1} / ${GlobalData.pages.length}`;
         this.prevBtn.visible = index > 0;
 
         this.loading = false;
         this._playSound();
-        this.twister.visible = false;
+        this.twister.setVisible(false);
     }
 
     /**
