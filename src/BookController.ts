@@ -19,12 +19,10 @@ export class BookController {
     private currentPageScene: ZScene | null = null;
     private currentPagePath: string | null = null;
 
-    // Overlay: nav buttons drawn with PIXI primitives (no asset required)
-    private overlay: PIXI.Container = new PIXI.Container();
     private prevBtn!: ZButton;
     private nextBtn!: ZButton;
-    private soundBtn!: PIXI.Container;
-    private menuBtn!: PIXI.Container;
+    private soundBtn!: ZButton;
+    private menuBtn!: ZButton;
     private pageIndicator!: ZContainer;
 
     private blockWidth = 918;
@@ -87,38 +85,14 @@ export class BookController {
         this.nextBtn = this.blockScene!.sceneStage.get('forewardBTN') as ZButton;
         this.nextBtn.setCallback(() => this._next());
 
-        this.soundBtn = MainMenu.makeTextButton('🔊', 0x1a3a5c, () => this._playSound(), 56, 40);
-        this.menuBtn = MainMenu.makeTextButton(
-            GlobalData.labels['mainMenu'] ?? 'Menu',
-            0x3a1a0c,
-            () => this._goBack(),
-            90,
-            40,
-        );
+        this.soundBtn = this.blockScene?.sceneStage.get("replayBTN") as ZButton;
+        this.soundBtn.setLabel(GlobalData.labels['replay']);
+        this.soundBtn.setCallback(() => this._playSound());
+
+        this.menuBtn = this.blockScene?.sceneStage.get("menuBTN") as ZButton;
+        this.menuBtn.setLabel(GlobalData.labels['mainmenu']);
+        this.menuBtn.setCallback(() => this._goBack());
         this.pageIndicator = this.blockScene!.sceneStage.get('pageNum') as ZContainer;
-
-        this.overlay.addChild(this.soundBtn);
-        this.overlay.addChild(this.menuBtn);
-
-        this.stage.addChild(this.overlay);
-        this._positionOverlay();
-    }
-
-    /** Re-position all overlay elements relative to blockBG's current screen bounds. */
-    private _positionOverlay(): void {
-        if (!this.blockBGContainer) return;
-
-        if (this.stage.parent) this.stage.updateTransform();
-
-        // 🔊 top-left corner of blockBG
-        this.soundBtn.x = this.blockBGContainer.x;
-        this.soundBtn.y = this.blockBGContainer.y - 50;
-
-        // Menu top-right corner
-        this.menuBtn.x = this.blockBGContainer.x + this.blockWidth - 92;
-        this.menuBtn.y = this.blockBGContainer.y - 50;
-
-        // Caption — sits in the Block frame's text area, just below blockBG
     }
 
     // ─── Page loading ─────────────────────────────────────────────────────────
@@ -193,10 +167,6 @@ export class BookController {
 
         // Fit the page to fill blockBGContainer's local coordinate space
         this._fitPageToBlock(scene);
-        this._positionOverlay();
-
-        // Overlay must stay on top
-        this.stage.setChildIndex(this.overlay, this.stage.children.length - 1);
 
         // Play all timeline animations within the page
         this._playTimelines(scene.sceneStage);
@@ -259,7 +229,6 @@ export class BookController {
         if (this.currentPageScene) {
             this._fitPageToBlock(this.currentPageScene);
         }
-        this._positionOverlay();
     }
 
     // ─── Navigation ──────────────────────────────────────────────────────────
@@ -397,7 +366,6 @@ export class BookController {
             this.blockScene = null;
         }
 
-        this.stage.removeChild(this.overlay);
     }
 }
 
