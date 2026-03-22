@@ -4,6 +4,9 @@ import { GlobalData } from './GlobalData';
 import { MainMenu } from './MainMenu';
 import { safeDestroyScene, unloadSceneImages } from './sceneUtils';
 import { SlideObj } from './SlideObj';
+import { gsap } from 'gsap';
+
+
 
 export class BookController {
     private stage: PIXI.Container;
@@ -33,6 +36,8 @@ export class BookController {
     private voiceAudio: HTMLAudioElement | null = null;
     private loading = false;
     private pageMask: PIXI.Graphics | null = null;
+
+    private circle:PIXI.Graphics = new PIXI.Graphics();
 
     constructor(stage: PIXI.Container, onBack: () => void) {
         this.stage = stage;
@@ -75,6 +80,27 @@ export class BookController {
 
         // 3. Load first page
         await this._loadPage(GlobalData.counter);
+
+        let blockMaster = this.blockScene.sceneStage.get("blockMaster") as ZContainer;
+        let circleContainer = this.blockScene.sceneStage.get("circleContainer") as ZContainer;
+
+        this.circle.beginFill(0x000000,1);
+        this.circle.drawCircle(0,0,50);
+        this.circle.endFill();
+        circleContainer.addChild(this.circle);
+        blockMaster.mask = this.circle;
+        
+        // Tween a PIXI display object's properties over 0.5 seconds
+        gsap.to(circleContainer.scale, {
+            duration: 2,
+            x: 20,
+            y: 20,
+            ease: 'power2.out',
+            onComplete: () =>{
+                blockMaster.mask = null;
+                circleContainer.removeChild(this.circle);
+            } ,
+        });
     }
 
     // ─── Overlay ─────────────────────────────────────────────────────────────

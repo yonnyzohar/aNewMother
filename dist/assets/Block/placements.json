@@ -457,7 +457,7 @@
         "name": "Templategpj3",
         "template": true,
         "guide": false,
-        "instanceName": "instance_lo6w",
+        "instanceName": "blockMaster",
         "filters": {},
         "portrait": {
           "x": 0,
@@ -481,6 +481,47 @@
           "rotation": 0,
           "scaleX": 1.01,
           "scaleY": 1.01,
+          "alpha": 1,
+          "pivotX": 0,
+          "pivotY": 0,
+          "visible": true,
+          "isAnchored": false,
+          "anchorLocalPercentage": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      {
+        "type": "asset",
+        "editorOnly": false,
+        "name": "Templatewys7",
+        "template": true,
+        "guide": false,
+        "instanceName": "circleContainer",
+        "filters": {},
+        "portrait": {
+          "x": 372,
+          "y": 470,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "alpha": 1,
+          "pivotX": 0,
+          "pivotY": 0,
+          "visible": true,
+          "isAnchored": false,
+          "anchorLocalPercentage": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "landscape": {
+          "x": 528,
+          "y": 333,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
           "alpha": 1,
           "pivotX": 0,
           "pivotY": 0,
@@ -1521,13 +1562,13 @@
           "lineHeight": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "lineJoin": "miter",
+          "lineJoin": "round",
           "fontWeight": "bolder",
           "dropShadow": false,
-          "dropShadowAngle": 1.43,
+          "dropShadowAngle": 0.5235987755982988,
           "dropShadowBlur": 0,
-          "dropShadowColor": "#1a1919",
-          "dropShadowDistance": 9,
+          "dropShadowColor": "#000000",
+          "dropShadowDistance": 5,
           "fillType": "solid",
           "filters": {},
           "color": "#ffffff"
@@ -1535,6 +1576,11 @@
       ],
       "type": "asset",
       "name": "Templated90t"
+    },
+    "Templatewys7": {
+      "children": [],
+      "type": "asset",
+      "name": "Templatewys7"
     }
   },
   "fonts": [],
