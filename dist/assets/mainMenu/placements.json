@@ -46,47 +46,6 @@
           "width": 1025,
           "pivotX": 0
         }
-      },
-      {
-        "type": "asset",
-        "editorOnly": false,
-        "name": "Templatefvrf",
-        "template": true,
-        "guide": false,
-        "instanceName": "instance_u8sj",
-        "filters": {},
-        "portrait": {
-          "x": -406,
-          "y": 320,
-          "rotation": 0,
-          "scaleX": 0.67,
-          "scaleY": 0.67,
-          "alpha": 1,
-          "pivotX": 0,
-          "pivotY": 0,
-          "visible": true,
-          "isAnchored": false,
-          "anchorLocalPercentage": {
-            "x": 0,
-            "y": 0
-          }
-        },
-        "landscape": {
-          "x": -406,
-          "y": 320,
-          "rotation": 0,
-          "scaleX": 0.67,
-          "scaleY": 0.67,
-          "alpha": 1,
-          "pivotX": 0,
-          "pivotY": 0,
-          "visible": true,
-          "isAnchored": false,
-          "anchorLocalPercentage": {
-            "x": 0,
-            "y": 0
-          }
-        }
       }
     ],
     "type": "Container",
@@ -302,6 +261,47 @@
           "instanceName": "aboutBTN",
           "editorOnly": false,
           "filters": {}
+        },
+        {
+          "portrait": {
+            "x": 9,
+            "y": 682,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": 9.95,
+            "y": 682.22,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "type": "btn",
+          "name": "Templategj8j",
+          "guide": false,
+          "template": true,
+          "instanceName": "langBTN",
+          "editorOnly": false,
+          "filters": {}
         }
       ],
       "type": "asset",
@@ -418,16 +418,86 @@
       "name": "PlayBookBTN",
       "children": [
         {
-          "type": "img",
-          "name": "PlayBookBTN_IMG",
-          "width": 325,
-          "height": 325,
-          "x": -162.1,
-          "y": -162.15,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/playBookBTN.png",
-          "filters": {}
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templatefrj2",
+          "template": true,
+          "guide": false,
+          "instanceName": "downState",
+          "filters": {},
+          "portrait": {
+            "x": -151,
+            "y": -151,
+            "rotation": 0,
+            "scaleX": 0.93,
+            "scaleY": 0.93,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": -151,
+            "y": -151,
+            "rotation": 0,
+            "scaleX": 0.93,
+            "scaleY": 0.93,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templatefrj2",
+          "template": true,
+          "guide": false,
+          "instanceName": "upState",
+          "filters": {},
+          "portrait": {
+            "x": -163,
+            "y": -163,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": -163,
+            "y": -163,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
         },
         {
           "type": "asset",
@@ -435,16 +505,16 @@
           "name": "PlayTXT",
           "template": true,
           "guide": false,
-          "instanceName": "playTXT",
+          "instanceName": "labelContainer",
           "filters": {},
           "portrait": {
             "height": 49.15,
             "pivotY": 0,
             "isAnchored": false,
-            "x": -106,
+            "x": -4,
             "scaleX": 1,
             "skewY": 0,
-            "y": 36,
+            "y": 79,
             "visible": true,
             "rotation": 0,
             "scaleY": 1,
@@ -457,10 +527,10 @@
             "height": 49.15,
             "pivotY": 0,
             "isAnchored": false,
-            "x": -106,
+            "x": -4,
             "scaleX": 1,
             "skewY": 0,
-            "y": 36,
+            "y": 79,
             "visible": true,
             "rotation": 0,
             "scaleY": 1,
@@ -471,6 +541,24 @@
           }
         }
       ]
+    },
+    "Templatefrj2": {
+      "children": [
+        {
+          "type": "img",
+          "name": "Templatefrj2_IMG",
+          "width": 325,
+          "height": 325,
+          "x": 0,
+          "y": 0,
+          "pivotX": 0,
+          "pivotY": 0,
+          "filePath": "images/playBookBTN.png",
+          "filters": {}
+        }
+      ],
+      "type": "asset",
+      "name": "Templatefrj2"
     },
     "PlayTXT": {
       "children": [
@@ -496,8 +584,8 @@
           "leading": 0,
           "letterSpacing": 0,
           "padding": 0,
-          "textAnchorX": 0,
-          "textAnchorY": 0,
+          "textAnchorX": 0.5,
+          "textAnchorY": 0.5,
           "lineHeight": 0,
           "pivotX": 0,
           "pivotY": 0,
@@ -521,16 +609,86 @@
       "name": "AboutBTN",
       "children": [
         {
-          "type": "img",
-          "name": "AboutBTN_IMG",
-          "width": 332,
-          "height": 355,
-          "x": -165.7,
-          "y": -177.15,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/aboutBTN.png",
-          "filters": {}
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templategpa6",
+          "template": true,
+          "guide": false,
+          "instanceName": "downState",
+          "filters": {},
+          "portrait": {
+            "x": -151,
+            "y": -161,
+            "rotation": 0,
+            "scaleX": 0.91,
+            "scaleY": 0.91,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": -151,
+            "y": -161,
+            "rotation": 0,
+            "scaleX": 0.91,
+            "scaleY": 0.91,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templategpa6",
+          "template": true,
+          "guide": false,
+          "instanceName": "upState",
+          "filters": {},
+          "portrait": {
+            "x": -166,
+            "y": -178,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": -166,
+            "y": -178,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
         },
         {
           "type": "asset",
@@ -538,16 +696,16 @@
           "name": "AboutTXT",
           "template": true,
           "guide": false,
-          "instanceName": "aboutTXT",
+          "instanceName": "labelContainer",
           "filters": {},
           "portrait": {
             "height": 49.15,
             "pivotY": 0,
             "isAnchored": false,
-            "x": -74,
+            "x": -2,
             "scaleX": 1,
             "skewY": 0,
-            "y": 96,
+            "y": 128,
             "visible": true,
             "rotation": 0,
             "scaleY": 1,
@@ -560,10 +718,10 @@
             "height": 49.15,
             "pivotY": 0,
             "isAnchored": false,
-            "x": -74,
+            "x": -2,
             "scaleX": 1,
             "skewY": 0,
-            "y": 96,
+            "y": 128,
             "visible": true,
             "rotation": 0,
             "scaleY": 1,
@@ -574,6 +732,24 @@
           }
         }
       ]
+    },
+    "Templategpa6": {
+      "children": [
+        {
+          "type": "img",
+          "name": "Templategpa6_IMG",
+          "width": 332,
+          "height": 355,
+          "x": 0,
+          "y": 0,
+          "pivotX": 0,
+          "pivotY": 0,
+          "filePath": "images/aboutBTN.png",
+          "filters": {}
+        }
+      ],
+      "type": "asset",
+      "name": "Templategpa6"
     },
     "AboutTXT": {
       "children": [
@@ -599,8 +775,8 @@
           "leading": 0,
           "letterSpacing": 0,
           "padding": 0,
-          "textAnchorX": 0,
-          "textAnchorY": 0,
+          "textAnchorX": 0.5,
+          "textAnchorY": 0.5,
           "lineHeight": 0,
           "pivotX": 0,
           "pivotY": 0,
@@ -619,23 +795,196 @@
       "type": "asset",
       "name": "AboutTXT"
     },
-    "Templatefvrf": {
+    "Templategj8j": {
+      "type": "btn",
+      "name": "Templategj8j",
+      "children": [
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templatexjq3",
+          "template": true,
+          "guide": false,
+          "instanceName": "upState",
+          "filters": {},
+          "portrait": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scaleX": 0.48,
+            "scaleY": 0.48,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scaleX": 0.48,
+            "scaleY": 0.48,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templatexjq3",
+          "template": true,
+          "guide": false,
+          "instanceName": "downState",
+          "filters": {},
+          "portrait": {
+            "x": 5,
+            "y": 2,
+            "rotation": 0,
+            "scaleX": 0.43,
+            "scaleY": 0.43,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": 5,
+            "y": 2,
+            "rotation": 0,
+            "scaleX": 0.43,
+            "scaleY": 0.43,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templateijv9",
+          "template": true,
+          "guide": false,
+          "instanceName": "labelContainer",
+          "filters": {},
+          "portrait": {
+            "x": 51,
+            "y": 25,
+            "rotation": 0,
+            "scaleX": 0.53,
+            "scaleY": 0.53,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": 51,
+            "y": 25,
+            "rotation": 0,
+            "scaleX": 0.53,
+            "scaleY": 0.53,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      ]
+    },
+    "Templatexjq3": {
       "children": [
         {
           "type": "img",
-          "name": "Templatefvrf_IMG",
-          "width": 413,
-          "height": 352,
+          "name": "Templatexjq3_IMG",
+          "width": 216,
+          "height": 104,
           "x": 0,
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/zs_gen_1774133515582.png",
+          "filePath": "images/Screenshot 2026-03-22 at 20.44.30.png",
           "filters": {}
         }
       ],
       "type": "asset",
-      "name": "Templatefvrf"
+      "name": "Templatexjq3"
+    },
+    "Templateijv9": {
+      "children": [
+        {
+          "text": "New Textfield",
+          "type": "textField",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "width": 148,
+          "height": 35,
+          "alpha": 1,
+          "size": 30,
+          "align": "center",
+          "fontName": "Apple LiGothic",
+          "z": 1,
+          "stroke": "#042895",
+          "strokeThickness": 0,
+          "wordWrap": false,
+          "wordWrapWidth": 100,
+          "breakWords": false,
+          "leading": 0,
+          "letterSpacing": 0,
+          "padding": 0,
+          "textAnchorX": 0.5,
+          "textAnchorY": 0.5,
+          "lineHeight": 0,
+          "pivotX": 0,
+          "pivotY": 0,
+          "lineJoin": "miter",
+          "fontWeight": "bolder",
+          "dropShadow": false,
+          "dropShadowAngle": 1.43,
+          "dropShadowBlur": 0,
+          "dropShadowColor": "#1a1919",
+          "dropShadowDistance": 9,
+          "fillType": "solid",
+          "filters": {},
+          "color": "#ffffff"
+        }
+      ],
+      "type": "asset",
+      "name": "Templateijv9"
     }
   },
   "fonts": [],

@@ -34,9 +34,7 @@ export class MainMenu {
 
         ZSceneStack.push(this.scene);
         this.scene.loadStage(this.stage);
-
         this._applyLabels();
-        this._addLangToggle();
     }
 
     /** Re-apply labels + re-create overlay after a language switch. */
@@ -46,8 +44,6 @@ export class MainMenu {
 
         // Rebuild the lang toggle button text
         this.stage.removeChild(this.overlay);
-        this.overlay = new PIXI.Container();
-        this._addLangToggle();
     }
 
     private _applyLabels(): void {
@@ -58,63 +54,23 @@ export class MainMenu {
         ss.get('storyNameTXT')?.setText(L['storyname'] ?? '');
 
         const playBtn = ss.get('playBookBTN') as ZButton | null;
-        playBtn?.setLabel(L['play'] ?? 'Play');
+        playBtn?.setLabel?.(L['play'] ?? 'Play');
         playBtn?.setCallback(() => this.onPlay());
 
         const aboutBtn = ss.get('aboutBTN') as ZButton | null;
-        aboutBtn?.setLabel(L['about'] ?? 'About');
+        aboutBtn?.setLabel?.(L['about'] ?? 'About');
         aboutBtn?.setCallback(() => this.onAbout());
-    }
 
-    /** Creates a small language-toggle button using PIXI.Graphics (no asset needed). */
-    private _addLangToggle(): void {
-        const otherLang = GlobalData.currentLang === 'eng' ? 'HEB' : 'ENG';
-
-        const btn = MainMenu.makeTextButton(otherLang, 0x1a3a5c, () => {
+        const otherLang =GlobalData.currentLang === 'eng' ? 'HEB' : 'ENG';
+        const langBTN = ss.get('langBTN') as ZButton | null;
+        langBTN?.setLabel?.(otherLang);
+        langBTN?.setCallback(() => {
             const next = GlobalData.currentLang === 'eng' ? 'heb' : 'eng';
+            const newLabel = next === 'eng' ? 'HEB' : 'ENG';
+            langBTN?.setLabel?.(newLabel);
             this.onLangChange(next);
         });
-
-        // Place in top-right corner
-        btn.x = window.innerWidth - 80;
-        btn.y = 16;
-        this.overlay.addChild(btn);
-        this.stage.addChild(this.overlay);
     }
-
-    /** Utility: create a rectangle button with centred label using only PIXI primitives. */
-    static makeTextButton(
-        label: string,
-        color: number,
-        onClick: () => void,
-        width = 100,
-        height = 44,
-    ): PIXI.Container {
-        const c = new PIXI.Container();
-
-        const bg = new PIXI.Graphics();
-        bg.beginFill(color, 0.85);
-        bg.lineStyle(2, 0xffffff, 0.9);
-        bg.drawRoundedRect(0, 0, width, height, 8);
-        bg.endFill();
-
-        const txt = new PIXI.Text(label, {
-            fontSize: 18,
-            fill: 0xffffff,
-            fontWeight: 'bold',
-        });
-        txt.anchor.set(0.5);
-        txt.x = width / 2;
-        txt.y = height / 2;
-
-        c.addChild(bg);
-        c.addChild(txt);
-        c.interactive = true;
-        c.cursor = 'pointer';
-        c.on('pointerdown', onClick);
-        return c;
-    }
-
     destroy(): void {
         const playBtn = this.scene.sceneStage.get('playBookBTN') as ZButton | null;
         playBtn?.removeCallback();
