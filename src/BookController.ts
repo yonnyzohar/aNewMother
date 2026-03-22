@@ -25,7 +25,7 @@ export class BookController {
     private nextBtn!: ZButton;
     private soundBtn!: PIXI.Container;
     private menuBtn!: PIXI.Container;
-    private pageIndicator!: PIXI.Text;
+    private pageIndicator!: ZContainer;
 
     private blockWidth = 918;
     private blockHeight = 548;
@@ -95,12 +95,10 @@ export class BookController {
             90,
             40,
         );
-        this.pageIndicator = new PIXI.Text('', { fontSize: 14, fill: 0x666666 });
-        this.pageIndicator.anchor.set(0.5, 0);
+        this.pageIndicator = this.blockScene!.sceneStage.get('pageNum') as ZContainer;
 
         this.overlay.addChild(this.soundBtn);
         this.overlay.addChild(this.menuBtn);
-        this.overlay.addChild(this.pageIndicator);
 
         this.stage.addChild(this.overlay);
         this._positionOverlay();
@@ -121,11 +119,6 @@ export class BookController {
         this.menuBtn.y = this.blockBGContainer.y - 50;
 
         // Caption — sits in the Block frame's text area, just below blockBG
-        const isHeb = GlobalData.currentLang === 'heb';
-
-        // Page indicator centred below caption
-        this.pageIndicator.x = this.blockBGContainer.x + this.blockWidth / 2;
-        this.pageIndicator.y = this.blockBGContainer.y + this.blockHeight + 46;
     }
 
     // ─── Page loading ─────────────────────────────────────────────────────────
@@ -216,7 +209,7 @@ export class BookController {
 
         // Set caption in Block's textBox (if it accepts text) AND in overlay
         this.textBoxContainer?.setText(slide.caption);
-        this.pageIndicator.text = `${index + 1} / ${GlobalData.pages.length}`;
+        this.pageIndicator.setText(`${index + 1} / ${GlobalData.pages.length}`);
         this.prevBtn.visible = index > 0;
 
         this.loading = false;
