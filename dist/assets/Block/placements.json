@@ -461,7 +461,7 @@
         "filters": {},
         "portrait": {
           "x": 0,
-          "y": 221,
+          "y": 240,
           "rotation": 0,
           "scaleX": 0.72,
           "scaleY": 0.72,
@@ -479,8 +479,8 @@
           "x": 0,
           "y": -11,
           "rotation": 0,
-          "scaleX": 1.01,
-          "scaleY": 1.01,
+          "scaleX": 0.99,
+          "scaleY": 0.99,
           "alpha": 1,
           "pivotX": 0,
           "pivotY": 0,
@@ -501,8 +501,8 @@
         "instanceName": "circleContainer",
         "filters": {},
         "portrait": {
-          "x": 372,
-          "y": 470,
+          "x": 376,
+          "y": 489,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1,
@@ -517,8 +517,8 @@
           }
         },
         "landscape": {
-          "x": 528,
-          "y": 333,
+          "x": 515,
+          "y": 327,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1,
@@ -550,7 +550,7 @@
           "filters": {},
           "portrait": {
             "x": 0,
-            "y": 10,
+            "y": 0,
             "rotation": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -592,7 +592,7 @@
         {
           "portrait": {
             "x": 974,
-            "y": 359,
+            "y": 349,
             "rotation": 3.14,
             "scaleX": 1,
             "scaleY": 1,
@@ -633,7 +633,7 @@
         {
           "portrait": {
             "x": 52,
-            "y": 359,
+            "y": 349,
             "rotation": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -673,8 +673,8 @@
         },
         {
           "portrait": {
-            "x": 861,
-            "y": 15,
+            "x": 862,
+            "y": 4,
             "rotation": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -715,7 +715,7 @@
         {
           "portrait": {
             "x": 50,
-            "y": 15,
+            "y": 4,
             "rotation": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -763,7 +763,7 @@
           "filters": {},
           "portrait": {
             "x": 519,
-            "y": 590,
+            "y": 589,
             "rotation": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -862,7 +862,7 @@
           "filters": {},
           "portrait": {
             "x": 519,
-            "y": 617,
+            "y": 616,
             "rotation": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -957,36 +957,44 @@
           "instanceName": "filmSides",
           "filters": {},
           "portrait": {
-            "skewX": 0,
-            "width": 1028.15,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
             "x": 0,
-            "scaleX": 1,
             "y": 0,
-            "visible": true,
+            "rotation": 0,
+            "scaleX": 1,
             "scaleY": 1,
-            "pivotX": 0,
             "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 1028.15,
             "height": 740.2,
-            "pivotY": 0
+            "skewX": 0,
+            "skewY": 0
           },
           "landscape": {
-            "skewX": 0,
-            "width": 1028.15,
-            "isAnchored": false,
-            "skewY": 0,
+            "x": 3,
+            "y": 15,
             "rotation": 0,
-            "x": 0,
             "scaleX": 1,
-            "y": 0,
-            "visible": true,
             "scaleY": 1,
-            "pivotX": 0,
             "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 1028.15,
             "height": 740.2,
-            "pivotY": 0
+            "skewX": 0,
+            "skewY": 0
           }
         },
         {
@@ -1003,9 +1011,9 @@
             "isAnchored": false,
             "skewY": 0,
             "rotation": 0,
-            "x": 55,
+            "x": 53,
             "scaleX": 1,
-            "y": 67,
+            "y": 66,
             "visible": true,
             "scaleY": 1,
             "pivotX": 0,
@@ -1019,15 +1027,211 @@
             "isAnchored": false,
             "skewY": 0,
             "rotation": 0,
-            "x": 55,
+            "x": 52,
             "scaleX": 1,
-            "y": 67,
+            "y": 66,
             "visible": true,
             "scaleY": 1,
             "pivotX": 0,
             "alpha": 1,
             "height": 547.15,
             "pivotY": 0
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Instance12",
+          "template": true,
+          "guide": false,
+          "instanceName": "filmSidesTop",
+          "filters": {},
+          "portrait": {
+            "x": 0,
+            "y": -732,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 1028.15,
+            "height": 740.2,
+            "skewX": 0,
+            "skewY": 0
+          },
+          "landscape": {
+            "x": 4,
+            "y": -734,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 1028.15,
+            "height": 740.2,
+            "skewX": 0,
+            "skewY": 0
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Instance12",
+          "template": true,
+          "guide": false,
+          "instanceName": "filmSidesBTM",
+          "filters": {},
+          "portrait": {
+            "x": 0,
+            "y": 745,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 1028.15,
+            "height": 740.2,
+            "skewX": 0,
+            "skewY": 0
+          },
+          "landscape": {
+            "x": 4,
+            "y": 745,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 1028.15,
+            "height": 740.2,
+            "skewX": 0,
+            "skewY": 0
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "BlockBG",
+          "template": true,
+          "guide": false,
+          "instanceName": "blockBGTop",
+          "filters": {},
+          "portrait": {
+            "x": 54,
+            "y": -630,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 917.75,
+            "height": 547.15,
+            "skewX": 0,
+            "skewY": 0
+          },
+          "landscape": {
+            "x": 52,
+            "y": -631,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 917.75,
+            "height": 547.15,
+            "skewX": 0,
+            "skewY": 0
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "BlockBG",
+          "template": true,
+          "guide": false,
+          "instanceName": "blockBGBTM",
+          "filters": {},
+          "portrait": {
+            "x": 53,
+            "y": 848,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 917.75,
+            "height": 547.15,
+            "skewX": 0,
+            "skewY": 0
+          },
+          "landscape": {
+            "x": 52,
+            "y": 848,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 917.75,
+            "height": 547.15,
+            "skewX": 0,
+            "skewY": 0
           }
         }
       ],
