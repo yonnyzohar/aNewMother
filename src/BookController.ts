@@ -57,6 +57,19 @@ export class BookController {
         if (this.blockBGContainer) this.blockBGContainer.eventMode = 'passive';
         this.textBoxContainer = this.blockScene.sceneStage.get('textBox');
         this.twister = this.blockScene.sceneStage.get("twister") as ZContainer;
+
+        // filmSides is a decorative overlay that sits on top of everything —
+        // disable its hit-testing so it never blocks clicks on the pages below.
+        const filmSides = this.blockScene.sceneStage.get('filmSides');
+        if (filmSides) filmSides.eventMode = 'none';
+
+        // blockContainer sits between sceneStage and blockBG — must be passive
+        // so events can propagate all the way in to the page children.
+        const blockContainer = this.blockScene.sceneStage.get('blockContainer');
+        if (blockContainer) blockContainer.eventMode = 'passive';
+
+        // Ensure the block scene's own sceneStage passes events through.
+        this.blockScene.sceneStage.eventMode = 'passive';
         
 
         // 2. Build nav-button overlay (always on top)
@@ -283,20 +296,44 @@ export class BookController {
     // ─── Voice handlers ───────────────────────────────────────────────────────
 
     private _attachVoiceHandlers(scene: ZScene, slide: SlideObj): void {
-        // Allow the scene stage to propagate pointer events to its children
-        scene.sceneStage.eventMode = 'passive';
+        if (Object.keys(slide.voices).length === 0) return;
 
-        for (const [mcName, voicePath] of Object.entries(slide.voices)) {
-            const mc = scene.sceneStage.get(mcName);
-            if (!mc) continue;
-            mc.eventMode = 'static';
-            mc.cursor = 'pointer';
-            mc.on('pointerdown', () => {
-                this._stopVoice();
-                const url = `${GlobalData.assetsBasePath}${voicePath}`;
-                this.voiceAudio = new Audio(url);
-                this.voiceAudio.play().catch(e => console.warn(`Voice play error (${mcName}):`, e));
-            });
+        const sceneStage = scene.sceneStage;
+
+        // Walk every ancestor up to root and ensure none block events.
+        let node = sceneStage.parent as PIXI.Container | null;
+        while (node && node !== this.stage) {
+            (node as unknown as { eventMode: string }).eventMode = 'passive';
+            node = node.parent as PIXI.Container | null;
+        }
+
+        // Give sceneStage a broad hitArea covering the full design space so
+        // PIXI always considers it hittable, regardless of child offsets.
+        sceneStage.hitArea = new PIXI.Rectangle(
+            0, 0, scene.sceneWidth, scene.sceneHeight
+        );
+        sceneStage.eventMode = 'static';
+
+        // ONE listener on sceneStage — resolve the clicked MC via screen-space
+        // bounds check, bypassing per-MC containsPoint() issues entirely.
+        
+            for (const [mcName, voicePath] of Object.entries(slide.voices)) {
+                const mc = sceneStage.get(mcName);
+                
+                if (!mc) continue;
+                mc.interactive = true;
+                mc.interactiveChildren = true;
+                let callback = (event: PIXI.FederatedPointerEvent) => {
+                
+                    this._stopVoice();
+                    const url = `${GlobalData.assetsBasePath}${voicePath}`;
+                    this.voiceAudio = new Audio(url);
+                    this.voiceAudio.play().catch(e => console.warn(`Voice play error (${mcName}):`, e));
+                    return;
+                
+                };
+                mc.on('mousedown', callback);
+                mc.on('touchstart', callback);  
         }
     }
 

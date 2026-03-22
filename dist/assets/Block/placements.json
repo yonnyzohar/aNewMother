@@ -510,8 +510,8 @@
           },
           "anchorType": "center",
           "anchorPercentage": {
-            "x": 0.06891891891891891,
-            "y": 0.45703125
+            "x": 0.0689189189189191,
+            "y": 0.45703124999999994
           }
         },
         "landscape": {
@@ -531,8 +531,8 @@
           },
           "anchorType": "center",
           "anchorPercentage": {
-            "x": 0.049804687499999986,
-            "y": 0.4716216216216216
+            "x": 0.049804687500000125,
+            "y": 0.4716216216216217
           }
         },
         "type": "btn",
@@ -562,7 +562,7 @@
           "anchorType": "center",
           "anchorPercentage": {
             "x": 0.9270270270270271,
-            "y": 0.45703125
+            "y": 0.45703124999999994
           }
         },
         "landscape": {
@@ -583,7 +583,7 @@
           "anchorType": "center",
           "anchorPercentage": {
             "x": 0.9511718749999998,
-            "y": 0.4716216216216216
+            "y": 0.4716216216216217
           }
         },
         "type": "btn",
@@ -639,6 +639,47 @@
             "pivotX": 0,
             "alpha": 1,
             "height": 547.15,
+            "pivotY": 0
+          }
+        },
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Instance12",
+          "template": true,
+          "guide": false,
+          "instanceName": "filmSides",
+          "filters": {},
+          "portrait": {
+            "skewX": 0,
+            "width": 1028.15,
+            "isAnchored": false,
+            "skewY": 0,
+            "rotation": 0,
+            "x": 0,
+            "scaleX": 1,
+            "y": 0,
+            "visible": true,
+            "scaleY": 1,
+            "pivotX": 0,
+            "alpha": 1,
+            "height": 740.2,
+            "pivotY": 0
+          },
+          "landscape": {
+            "skewX": 0,
+            "width": 1028.15,
+            "isAnchored": false,
+            "skewY": 0,
+            "rotation": 0,
+            "x": 0,
+            "scaleX": 1,
+            "y": 0,
+            "visible": true,
+            "scaleY": 1,
+            "pivotX": 0,
+            "alpha": 1,
+            "height": 740.2,
             "pivotY": 0
           }
         },
@@ -759,8 +800,8 @@
             "scaleX": 0.28,
             "scaleY": 0.28,
             "alpha": 1,
-            "pivotX": 91.95874595604016,
-            "pivotY": 19.31228846213844,
+            "pivotX": 91.96,
+            "pivotY": 19.31,
             "visible": true,
             "isAnchored": false,
             "anchorLocalPercentage": {
@@ -773,47 +814,6 @@
             "skewY": 0
           },
           "playOnStart": true
-        },
-        {
-          "type": "asset",
-          "editorOnly": false,
-          "name": "Instance12",
-          "template": true,
-          "guide": false,
-          "instanceName": "filmSides",
-          "filters": {},
-          "portrait": {
-            "skewX": 0,
-            "width": 1028.15,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 0,
-            "scaleX": 1,
-            "y": 0,
-            "visible": true,
-            "scaleY": 1,
-            "pivotX": 0,
-            "alpha": 1,
-            "height": 740.2,
-            "pivotY": 0
-          },
-          "landscape": {
-            "skewX": 0,
-            "width": 1028.15,
-            "isAnchored": false,
-            "skewY": 0,
-            "rotation": 0,
-            "x": 0,
-            "scaleX": 1,
-            "y": 0,
-            "visible": true,
-            "scaleY": 1,
-            "pivotX": 0,
-            "alpha": 1,
-            "height": 740.2,
-            "pivotY": 0
-          }
         }
       ],
       "type": "asset",
@@ -836,6 +836,24 @@
       ],
       "type": "asset",
       "name": "Instance5"
+    },
+    "Instance12": {
+      "children": [
+        {
+          "type": "img",
+          "name": "Instance12_IMG",
+          "width": 1029,
+          "height": 741,
+          "x": 0,
+          "y": -2,
+          "pivotX": 0,
+          "pivotY": 0,
+          "filePath": "images/instance12.png",
+          "filters": {}
+        }
+      ],
+      "type": "asset",
+      "name": "Instance12"
     },
     "BlockBG": {
       "children": [
@@ -983,10 +1001,10 @@
             "y": 19,
             "visible": true,
             "scaleY": 1,
-            "pivotX": 54.416878308860305,
+            "pivotX": 54.42,
             "alpha": 1,
             "height": 244.65,
-            "pivotY": -22.70159939690518
+            "pivotY": -22.7
           }
         }
       ],
@@ -1010,24 +1028,6 @@
       ],
       "type": "asset",
       "name": "Instance9"
-    },
-    "Instance12": {
-      "children": [
-        {
-          "type": "img",
-          "name": "Instance12_IMG",
-          "width": 1029,
-          "height": 741,
-          "x": 0,
-          "y": -2,
-          "pivotX": 0,
-          "pivotY": 0,
-          "filePath": "images/instance12.png",
-          "filters": {}
-        }
-      ],
-      "type": "asset",
-      "name": "Instance12"
     },
     "BTNTemplate": {
       "type": "btn",
