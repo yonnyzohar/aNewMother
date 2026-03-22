@@ -251,6 +251,7 @@ export class BookController {
 
     private _goBack(): void {
         this._stopAudio();
+        GlobalData.playUiSound('stop.mp3');
         this.destroy();
         this.onBack();
     }

@@ -38,6 +38,7 @@ export class AboutScreen {
         const xBtn = this.scene.sceneStage.get('xButton');
         if (xBtn) xBtn.removeAllListeners();
 
+        GlobalData.playUiSound('xClose.mp3');
         ZSceneStack.pop();
         this.stage.removeChild(this.scene.sceneStage);
         this.scene.destroy();

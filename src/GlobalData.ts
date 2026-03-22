@@ -24,4 +24,10 @@ export class GlobalData {
         const filename = soundPath.split('/').pop() ?? '';
         return `${GlobalData.getLangPath()}sounds/${filename}`;
     }
+
+    /** Play a short UI sound from dist/assets/sounds/<name>. Fire-and-forget. */
+    static playUiSound(name: string): void {
+        const audio = new Audio(`${GlobalData.assetsBasePath}sounds/${name}`);
+        audio.play().catch(() => {});
+    }
 }

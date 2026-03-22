@@ -55,11 +55,11 @@ export class MainMenu {
 
         const playBtn = ss.get('playBookBTN') as ZButton | null;
         playBtn?.setLabel?.(L['play'] ?? 'Play');
-        playBtn?.setCallback(() => this.onPlay());
+        playBtn?.setCallback(() => { GlobalData.playUiSound('MenuButton.mp3'); GlobalData.playUiSound('start.mp3'); this.onPlay(); });
 
         const aboutBtn = ss.get('aboutBTN') as ZButton | null;
         aboutBtn?.setLabel?.(L['about'] ?? 'About');
-        aboutBtn?.setCallback(() => this.onAbout());
+        aboutBtn?.setCallback(() => { GlobalData.playUiSound('MenuButton.mp3'); this.onAbout(); });
 
         const otherLang =GlobalData.currentLang === 'eng' ? 'HEB' : 'ENG';
         const langBTN = ss.get('langBTN') as ZButton | null;
