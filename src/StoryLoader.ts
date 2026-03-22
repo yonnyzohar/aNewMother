@@ -15,7 +15,7 @@ export class StoryLoader {
     }
 
     private static async loadStory(url: string): Promise<void> {
-        const data = await StoryLoader.fetchJSON<{ items: Array<{ file: string; sound: string; caption: string }> }>(url);
+        const data = await StoryLoader.fetchJSON<{ items: Array<{ file: string; sound: string; caption: string; voices: Record<string, string> }> }>(url);
         if (!data) return;
 
         GlobalData.pages = [];
@@ -28,6 +28,7 @@ export class StoryLoader {
             slide.pageNum = index; // pages/<index>/ folder exists for 1-27
             slide.sound = item.sound.split('/').pop() ?? '';
             slide.caption = item.caption;
+            slide.voices = item.voices ?? {};
             GlobalData.pages.push(slide);
         });
 

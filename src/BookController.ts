@@ -29,6 +29,7 @@ export class BookController {
 
     private blockWidth = 918;
     private blockHeight = 548;
+    private twister:ZContainer;
 
     private audio: HTMLAudioElement | null = null;
     private loading = false;
@@ -52,6 +53,8 @@ export class BookController {
         // Grab blockBG and textBox containers for positioning
         this.blockBGContainer = this.blockScene.sceneStage.get('blockBG');
         this.textBoxContainer = this.blockScene.sceneStage.get('textBox');
+        this.twister = this.blockScene.sceneStage.get("twister") as ZContainer;
+        
 
         // 2. Build nav-button overlay (always on top)
         this._buildOverlay();
@@ -123,31 +126,12 @@ export class BookController {
         this.pageIndicator.y = this.blockBGContainer.y + this.blockHeight + 46;
     }
 
-    private _makeNavBtn(label: string, onClick: () => void): PIXI.Container {
-        const c = new PIXI.Container();
-        const g = new PIXI.Graphics();
-        g.beginFill(0x3a2000, 0.75);
-        g.lineStyle(2, 0xf0c060, 0.9);
-        g.drawCircle(36, 36, 34);
-        g.endFill();
-        const txt = new PIXI.Text(label, { fontSize: 26, fill: 0xf0c060 });
-        txt.anchor.set(0.5);
-        txt.x = 36;
-        txt.y = 36;
-        c.addChild(g);
-        c.addChild(txt);
-        c.interactive = true;
-        c.cursor = 'pointer';
-        c.on('pointerdown', onClick);
-        return c;
-    }
-
     // ─── Page loading ─────────────────────────────────────────────────────────
 
     private async _loadPage(index: number): Promise<void> {
         if (this.loading) return;
         this.loading = true;
-
+        this.twister.visible = true;
         this._stopAudio();
 
         // Unload old page's image aliases from PIXI cache before destroying.
@@ -174,7 +158,7 @@ export class BookController {
         await new Promise<void>(resolve => {
             scene.load(pagePath, () => resolve());
         });
-
+        
         // Load to stage first (ZScene requires this to initialise), then
         // reparent into blockBGContainer so it inherits the frame's transform.
         scene.loadStage(this.stage);
@@ -218,6 +202,7 @@ export class BookController {
 
         this.loading = false;
         this._playSound();
+        this.twister.visible = false;
     }
 
     /**
