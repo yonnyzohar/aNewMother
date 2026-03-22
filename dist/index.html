@@ -37,21 +37,16 @@
 
     <script src="bundle.js"></script>
 
-    <!-- This is a comment 
-    <button onclick="toggleFullscreen()">Go Fullscreen</button>
-
     <script>
-        function toggleFullscreen() {
+        window.addEventListener('click', function enterFullscreen() {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen().catch(err => {
                     console.error(`Error attempting fullscreen: ${err.message}`);
                 });
-            } else {
-                document.exitFullscreen();
             }
-        }
+            window.removeEventListener('click', enterFullscreen);
+        });
     </script>
-    -->
 </body>
 
 </html>
