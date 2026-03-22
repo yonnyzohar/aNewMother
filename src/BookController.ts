@@ -3,6 +3,7 @@ import { ZScene, ZSceneStack, ZTimeline, ZContainer, ZButton } from 'zimporter-p
 import { GlobalData } from './GlobalData';
 import { MainMenu } from './MainMenu';
 import { safeDestroyScene, unloadSceneImages } from './sceneUtils';
+import { SlideObj } from './SlideObj';
 
 export class BookController {
     private stage: PIXI.Container;
@@ -32,6 +33,7 @@ export class BookController {
     private twister:ZContainer;
 
     private audio: HTMLAudioElement | null = null;
+    private voiceAudio: HTMLAudioElement | null = null;
     private loading = false;
 
     constructor(stage: PIXI.Container, onBack: () => void) {
@@ -52,6 +54,7 @@ export class BookController {
 
         // Grab blockBG and textBox containers for positioning
         this.blockBGContainer = this.blockScene.sceneStage.get('blockBG');
+        if (this.blockBGContainer) this.blockBGContainer.eventMode = 'passive';
         this.textBoxContainer = this.blockScene.sceneStage.get('textBox');
         this.twister = this.blockScene.sceneStage.get("twister") as ZContainer;
         
@@ -194,6 +197,9 @@ export class BookController {
         this.currentPageScene = scene;
         this.currentPagePath = pagePath;
 
+        // Wire up per-character voice tap handlers
+        this._attachVoiceHandlers(scene, slide);
+
         // Set caption in Block's textBox (if it accepts text) AND in overlay
         this.textBoxContainer?.setText(slide.caption);
         this.captionText.text = slide.caption;
@@ -274,6 +280,34 @@ export class BookController {
         this.onBack();
     }
 
+    // ─── Voice handlers ───────────────────────────────────────────────────────
+
+    private _attachVoiceHandlers(scene: ZScene, slide: SlideObj): void {
+        // Allow the scene stage to propagate pointer events to its children
+        scene.sceneStage.eventMode = 'passive';
+
+        for (const [mcName, voicePath] of Object.entries(slide.voices)) {
+            const mc = scene.sceneStage.get(mcName);
+            if (!mc) continue;
+            mc.eventMode = 'static';
+            mc.cursor = 'pointer';
+            mc.on('pointerdown', () => {
+                this._stopVoice();
+                const url = `${GlobalData.assetsBasePath}${voicePath}`;
+                this.voiceAudio = new Audio(url);
+                this.voiceAudio.play().catch(e => console.warn(`Voice play error (${mcName}):`, e));
+            });
+        }
+    }
+
+    private _stopVoice(): void {
+        if (this.voiceAudio) {
+            this.voiceAudio.pause();
+            this.voiceAudio.currentTime = 0;
+            this.voiceAudio = null;
+        }
+    }
+
     // ─── Sound ───────────────────────────────────────────────────────────────
 
     private _playSound(): void {
@@ -291,6 +325,7 @@ export class BookController {
             this.audio.currentTime = 0;
             this.audio = null;
         }
+        this._stopVoice();
     }
 
     // ─── Cleanup ─────────────────────────────────────────────────────────────
