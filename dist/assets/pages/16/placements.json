@@ -1167,11 +1167,11 @@
         "easing": "none"
       },
       {
-        "rotation": 0.01686245139612315,
+        "rotation": 0,
         "scaleX": 0.999959056475204,
         "scaleY": 0.999959056475204,
-        "skewX": 0.01686245139612315,
-        "skewY": 0.01686245139612315,
+        "skewX": 0,
+        "skewY": 0,
         "keyFrame": true,
         "currentFrame": 102,
         "endFrame": 102,
@@ -2398,8 +2398,8 @@
           "x": 0,
           "y": -2,
           "rotation": 0,
-          "scaleX": 0.56,
-          "scaleY": 0.56,
+          "scaleX": 1,
+          "scaleY": 1,
           "alpha": 1,
           "pivotX": 0,
           "pivotY": 0,
@@ -2433,6 +2433,53 @@
   },
   "templates": {
     "Templatelbni": {
+      "children": [
+        {
+          "type": "asset",
+          "editorOnly": false,
+          "name": "Templateka2i",
+          "template": true,
+          "guide": false,
+          "instanceName": "instance_nman",
+          "filters": {},
+          "portrait": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "landscape": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "alpha": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "visible": true,
+            "isAnchored": false,
+            "anchorLocalPercentage": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      ],
+      "type": "asset",
+      "name": "Templatelbni"
+    },
+    "Templateka2i": {
       "children": [
         {
           "type": "asset",
@@ -2937,7 +2984,7 @@
         }
       ],
       "type": "asset",
-      "name": "Templatelbni"
+      "name": "Templateka2i"
     },
     "Bg": {
       "children": [

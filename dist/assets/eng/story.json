@@ -277,8 +277,7 @@
             "file": "assets/swf/25.swf",
             "sound": "assets/sounds/25.mp3",
             "voices": {
-                "dogMC": "voices/25/bark.mp3",
-                "meMC": "voices/25/HUD.mp3"
+                "dogMC": "voices/25/bark.mp3"
             }
         },
         {

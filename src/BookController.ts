@@ -34,6 +34,7 @@ export class BookController {
     private audio: HTMLAudioElement | null = null;
     private voiceAudio: HTMLAudioElement | null = null;
     private loading = false;
+    private pageMask: PIXI.Graphics | null = null;
 
     constructor(stage: PIXI.Container, onBack: () => void) {
         this.stage = stage;
@@ -145,6 +146,11 @@ export class BookController {
             this.currentPageScene = null;
             this.currentPagePath = null;
         }
+        if (this.pageMask) {
+            this.blockBGContainer?.removeChild(this.pageMask);
+            this.pageMask.destroy();
+            this.pageMask = null;
+        }
 
         const slide = GlobalData.pages[index];
         if (!slide) {
@@ -178,8 +184,18 @@ export class BookController {
 
         this.blockBGContainer?.addChild(scene.sceneStage);
         let innerMSK = this.blockBGContainer?.getChildByName("innerMSK") as PIXI.Container;
-        if(innerMSK){
-            //scene.sceneStage.mask = innerMSK;
+        if (innerMSK && this.blockBGContainer) {
+            // Use a PIXI.Graphics rect instead of the ZContainer directly —
+            // PIXI v7 calls containsPoint() on the mask during hit-testing, and
+            // ZContainer.containsPoint() is unreliable on Flash exports, killing clicks.
+            const lb = innerMSK.getLocalBounds();
+            const gfxMask = new PIXI.Graphics();
+            gfxMask.beginFill(0xffffff);
+            gfxMask.drawRect(innerMSK.x + lb.x, innerMSK.y + lb.y, lb.width, lb.height);
+            gfxMask.endFill();
+            this.blockBGContainer.addChild(gfxMask);
+            scene.sceneStage.mask = gfxMask;
+            this.pageMask = gfxMask;
         }
 
         // Fit the page to fill blockBGContainer's local coordinate space
@@ -311,6 +327,10 @@ export class BookController {
                 console.log(`BookController: attached voice handler for "${mcName}" → ${voicePath}`);
                 mc.interactive = true;
                 mc.cursor = 'pointer';
+                // Pre-compute and lock the hit area so PIXI never has to
+                // recompute it dynamically (unreliable on Flash-export ZContainers).
+                const lb = mc.getLocalBounds();
+                mc.hitArea = new PIXI.Rectangle(lb.x - 10, lb.y - 10, lb.width + 20, lb.height + 20);
                 let callback = (event: PIXI.FederatedPointerEvent) => {
                     this._stopVoice();
                     const url = `${GlobalData.assetsBasePath}${voicePath}`;
@@ -363,6 +383,12 @@ export class BookController {
 
     destroy(): void {
         this._stopAudio();
+
+        if (this.pageMask) {
+            this.blockBGContainer?.removeChild(this.pageMask);
+            this.pageMask.destroy();
+            this.pageMask = null;
+        }
 
         if (this.currentPageScene) {
             this.stage?.removeChild(this.currentPageScene.sceneStage);
