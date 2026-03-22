@@ -1,0 +1,352 @@
+<?xml version=1.0 encoding=utf-8?>
+<list>
+  <item>
+    <file>assets/swf/0.jpg</file>
+	<image>assets/images/0.jpg</image>
+	<sound>assets/sounds/quiet.mp3</sound>
+    <caption></caption>
+	<voices></voices>
+  </item>
+  <item>
+    <file>assets/swf/1.swf</file>
+	<image>assets/images/1.jpg</image>
+	<sound>assets/sounds/1.mp3</sound>
+	<caption>The search for a new mother</caption>
+	<voices>
+		<chickMC>assets/voices/1/HUD.mp3</chickMC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/2.swf</file>
+	<image>assets/images/2.jpg</image>
+	<sound>assets/sounds/2.mp3</sound>
+    <caption>My name is Brownie, these are my brothers, the chicks,&#10; and my mother is the chicken.</caption>
+	<voices>
+		<motherMC>assets/voices/2/HUD.mp3</motherMC>
+		<chick1MC>assets/voices/2/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/2/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/2/HUD.mp3</chick3MC>
+		<chick4MC>assets/voices/2/HUD.mp3</chick4MC>
+		<chick5MC>assets/voices/2/HUD.mp3</chick5MC>
+		<chick6MC>assets/voices/2/HUD.mp3</chick6MC>
+	</voices>
+	</item>
+  <item>
+    <file>assets/swf/3.swf</file>
+	<image>assets/images/3.jpg</image>
+	<sound>assets/sounds/3.mp3</sound>
+    <caption>Mother feeds us worms and seeds, &#10;which she pecks from the ground with her long beak.</caption>
+   <voices>
+	    <motherMC>assets/voices/3/HUD.mp3</motherMC>
+		<chick1MC>assets/voices/3/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/3/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/3/HUD.mp3</chick3MC>
+		<chick4MC>assets/voices/3/HUD.mp3</chick4MC>
+		<chick5MC>assets/voices/3/HUD.mp3</chick5MC>
+		<cowMC>assets/voices/3/HUD.mp3</cowMC>
+   </voices>
+  </item>
+  <item>
+    <file>assets/swf/4.swf</file>
+	<image>assets/images/4.jpg</image>
+	<sound>assets/sounds/4.mp3</sound>
+    <caption>One morning, a young calf broke out from the barn,&#10; jumped all over and scared us.</caption>
+    <voices>
+		<chickenMC>assets/voices/4/HUD.mp3</chickenMC>
+		<chicksMC>assets/voices/4/HUD.mp3</chicksMC>
+		<meMC>assets/voices/4/HUD.mp3</meMC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/5.swf</file>
+	<image>assets/images/5.jpg</image>
+	<sound>assets/sounds/5.mp3</sound>
+    <caption>Mother called us to hide under her wings, so that the calf would &#10;not trample us. But I didn't pay attention.</caption>
+	<voices>
+		<cowMC>assets/voices/5/HUD.mp3</cowMC>
+		<meMC>assets/voices/5/HUD.mp3</meMC>
+		<chickenMC>assets/voices/5/HUD.mp3</chickenMC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/6.swf</file>
+	<image>assets/images/6.jpg</image>
+	<sound>assets/sounds/6.mp3</sound>
+    <caption>Mother was angry with me and pecked my head: "Very Dangerous!" - she said. Mother doesn't love me! I will have to find a new mother.</caption>
+	<voices>
+		<meMC>assets/voices/6/HUD.mp3</meMC>
+		<motherMC>assets/voices/6/HUD.mp3</motherMC>
+		<chick1MC>assets/voices/6/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/6/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/6/HUD.mp3</chick3MC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/7.swf</file>
+	<image>assets/images/7.jpg</image>
+	<sound>assets/sounds/7.mp3</sound>
+    <caption>I was insulted, and ran away.</caption>
+	<voices>
+		<meMC>assets/voices/7/HUD.mp3</meMC>
+		<chick1MC>assets/voices/7/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/7/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/7/HUD.mp3</chick3MC>
+		<chick4MC>assets/voices/7/HUD.mp3</chick4MC>
+		<chick5MC>assets/voices/7/HUD.mp3</chick5MC>
+	</voices>
+   
+  </item>
+  <item>
+    <file>assets/swf/8.swf</file>
+	<image>assets/images/8.jpg</image>
+	<sound>assets/sounds/8.mp3</sound>
+    <caption>Hello White Goose, will you be my mother? "Of course I will",&#10; said the goose, "Come join my five ducklings for a stroll."</caption>
+	<voices>
+		<chickMC>assets/voices/8/HUD.mp3</chickMC>
+		<duckMC>assets/voices/8/HUD.mp3</duckMC>
+		<quack1MC>assets/voices/8/HUD.mp3</quack1MC>
+		<quack2MC>assets/voices/8/HUD.mp3</quack2MC>
+		<quack3MC>assets/voices/8/HUD.mp3</quack3MC>
+		<quack4MC>assets/voices/8/HUD.mp3</quack4MC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/9.swf</file>
+	<image>assets/images/9.jpg</image>
+	<sound>assets/sounds/9.mp3</sound>
+    <caption>Mother Goose led us to the lake.</caption>
+	<voices>
+		<reed1MC>assets/voices/9/HUD.mp3</reed1MC>
+		<reed2MC>assets/voices/9/HUD.mp3</reed2MC>
+		<reed3MC>assets/voices/9/HUD.mp3</reed3MC>
+		<reed4MC>assets/voices/9/HUD.mp3</reed4MC>
+		<reed5MC>assets/voices/9/HUD.mp3</reed5MC>
+		<reed6MC>assets/voices/9/HUD.mp3</reed6MC>
+		<reed7MC>assets/voices/9/HUD.mp3</reed7MC>
+	</voices>
+    
+  </item>
+  <item>
+    <file>assets/swf/10.swf</file>
+	<image>assets/images/10.jpg</image>
+	<sound>assets/sounds/10.mp3</sound>
+    <caption>The ducklings all jumped happily into the water. Only I remained on the shore, trembling with fear.</caption>
+	<voices>
+		<meMC>assets/voices/10/HUD.mp3</meMC>
+		<duckMC>assets/voices/10/HUD.mp3</duckMC>
+		<quack1MC>assets/voices/10/HUD.mp3</quack1MC>
+		<quack2MC>assets/voices/10/HUD.mp3</quack2MC>
+		<quack3MC>assets/voices/10/HUD.mp3</quack3MC>
+		<quack4MC>assets/voices/10/HUD.mp3</quack4MC>
+	</voices>
+    
+</item>
+  <item>
+    <file>assets/swf/11.swf</file>
+	<image>assets/images/11.jpg</image>
+	<sound>assets/sounds/11.mp3</sound>
+    <caption>"Silly you, don't be scared, the water is refreshing, just spread your feet out and swim" - said mother goose, and pushed me straight into the water.</caption>
+   <voices>
+	   <meMC>assets/voices/11/HUD.mp3</meMC>
+		<duckFaceMC>assets/voices/11/HUD.mp3</duckFaceMC>
+		<quack1MC>assets/voices/11/HUD.mp3</quack1MC>
+		<quack2MC>assets/voices/11/HUD.mp3</quack2MC>
+		<quack3MC>assets/voices/11/HUD.mp3</quack3MC>
+   </voices>
+   
+  </item>
+  <item>
+    <file>assets/swf/12.swf</file>
+	<image>assets/images/12.jpg</image>
+	<sound>assets/sounds/12.mp3</sound>
+    <caption>I was startled. My feathers were soaked wet. &#10;If I haden't jumped to the shore I would surely have drowned!</caption>
+	<voices>
+		<meMC>assets/voices/12/HUD.mp3</meMC>
+	</voices>
+  
+  </item>
+  <item>
+    <file>assets/swf/13.swf</file>
+	<image>assets/images/13.jpg</image>
+	<sound>assets/sounds/13.mp3</sound>
+    <caption>I ran from the lake as fast as I could.</caption>
+	<voices>
+		<meMC>assets/voices/13/HUD.mp3</meMC>
+	</voices>
+   
+  </item>
+  <item>
+    <file>assets/swf/14.swf</file>
+	<image>assets/images/14.jpg</image>
+	<sound>assets/sounds/14.mp3</sound>
+    <caption>How nice is that family of swallows, &#10;sitting in the nest on the windowsill.</caption>
+    <voices>
+		<meMC>assets/voices/14/HUD.mp3</meMC>
+		<birdMC>assets/voices/14/HUD.mp3</birdMC>
+		<chicklingMC>assets/voices/14/HUD.mp3</chicklingMC>
+		<chickling2MC>assets/voices/14/HUD.mp3</chickling2MC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/15.swf</file>
+	<image>assets/images/15.jpg</image>
+	<sound>assets/sounds/15.mp3</sound>
+    <caption>Mother swallow, will you be my mother?</caption>
+	<voices>
+		<meMC>assets/voices/15/HUD.mp3</meMC>
+		<chick1MC>assets/voices/15/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/15/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/15/HUD.mp3</chick3MC>
+		<chick4MC>assets/voices/15/HUD.mp3</chick4MC>
+	</voices>
+    
+  </item>
+  <item>
+    <file>assets/swf/16.swf</file>
+	<image>assets/images/16.jpg</image>
+	<sound>assets/sounds/16.mp3</sound>
+    <caption>"Yes, gladly", said mother swallow, &#10;"Come join my nest and eat with my babies."</caption>
+	<voices>
+		<wormMC>assets/voices/16/HUD.mp3</wormMC>
+		<meMC>assets/voices/16/HUD.mp3</meMC>
+		<chick1MC>assets/voices/16/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/16/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/16/HUD.mp3</chick3MC>
+	</voices>
+   
+  </item>
+  <item>
+    <file>assets/swf/17.swf</file>
+	<image>assets/images/17.jpg</image>
+	<sound>assets/sounds/17.mp3</sound>
+    <caption>"It's time my young chicks, to learn to fly."&#10; Said Mother swallow.</caption>
+	<voices>
+		<meMC>assets/voices/17/HUD.mp3</meMC>
+		<chick1MC>assets/voices/17/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/17/HUD.mp3</chick2MC>
+		<chick4MC>assets/voices/17/HUD.mp3</chick4MC>
+		<chick5MC>assets/voices/17/HUD.mp3</chick5MC>
+		<birdMC>assets/voices/17/HUD.mp3</birdMC>
+	</voices>
+	
+    
+  </item>
+  <item>
+    <file>assets/swf/18.swf</file>
+	<image>assets/images/18.jpg</image>
+	<sound>assets/sounds/18.mp3</sound>
+    <caption>"You coward, spread your wings out and fly!", said Mother swallow.&#10; "But my wings are short, and I can't fly like you", I Begged.</caption>
+	<voices>
+		<meMC>assets/voices/18/HUD.mp3</meMC>
+		<bird1MC>assets/voices/18/HUD.mp3</bird1MC>
+		<bird2MC>assets/voices/18/HUD.mp3</bird2MC>
+		<bird3MC>assets/voices/18/HUD.mp3</bird3MC>
+		<bird4MC>assets/voices/18/HUD.mp3</bird4MC>
+	</voices>
+   
+  </item>
+  <item>
+    <file>assets/swf/19.swf</file>
+	<image>assets/images/19.jpg</image>
+	<sound>assets/sounds/19.mp3</sound>
+    <caption>I wanted to be like the other swallows, &#10;so i spread my wings.... and fell to the ground.</caption>
+	<voices>
+		<birdMC>assets/voices/19/HUD.mp3</birdMC>
+		<meMC>assets/voices/19/HUD.mp3</meMC>
+	</voices>
+   
+  </item>
+  <item>
+    <file>assets/swf/20.swf</file>
+	<image>assets/images/20.jpg</image>
+	<sound>assets/sounds/20.mp3</sound>
+    <caption>My whole body hurt! But then I saw a beautiful Cat!</caption>
+	<voices>
+		<meMC>assets/voices/20/HUD.mp3</meMC>
+		<catMC>assets/voices/20/HUD.mp3</catMC>
+	</voices>
+   
+  </item>
+  <item>
+    <file>assets/swf/21.swf</file>
+	<image>assets/images/21.jpg</image>
+	<sound>assets/sounds/21.mp3</sound>
+    <caption>"Will you be my mother?" "Yes, certainly.." - Said mother cat. "Let's hurry to the basement, my kittens are learning how to hunt mice."</caption>
+	<voices>
+		<meMC>assets/voices/21/HUD.mp3</meMC>
+		<catMC>assets/voices/21/HUD.mp3</catMC>
+	</voices>
+    
+  </item>
+  <item>
+    <file>assets/swf/22.swf</file>
+	<image>assets/images/22.jpg</image>
+	<sound>assets/sounds/22.mp3</sound>
+    <caption>"But i'm afraid of mice!"</caption>
+	<voices>
+		<cat1MC>assets/voices/22/HUD.mp3</cat1MC>
+		<cat2MC>assets/voices/22/HUD.mp3</cat2MC>
+		<mouseMC>assets/voices/22/HUD.mp3</mouseMC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/23.swf</file>
+	<image>assets/images/23.jpg</image>
+	<sound>assets/sounds/23.mp3</sound>
+    <caption>"Then you'll never make it! you'll always remain hungry!"&#10; said mother Cat, and scratched me!</caption>
+	<voices>
+		<meMC>assets/voices/23/HUD.mp3</meMC>
+		<catMC>assets/voices/23/HUD.mp3</catMC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/24.swf</file>
+	<image>assets/images/24.jpg</image>
+	<sound>assets/sounds/24.mp3</sound>
+    <caption>How lovely is Mother Dog playing with her puppies, &#10;I think i'll join them. "Mother Dog, will you be my mother?"</caption>
+	<voices>
+		<meMC>assets/voices/24/HUD.mp3</meMC>
+		<dogMC>assets/voices/24/HUD.mp3</dogMC>
+		<puppyMC>assets/voices/24/HUD.mp3</puppyMC>
+		<puppy2MC>assets/voices/24/HUD.mp3</puppy2MC>
+	</voices>
+	</item>
+  <item>
+    <file>assets/swf/25.swf</file>
+	<image>assets/images/25.jpg</image>
+	<sound>assets/sounds/25.mp3</sound>
+    <caption>Mother Dog jumped out of her kennel and chased me away. &#10;"Woof Woof! No No! You are not one of us! Go back to Mother Chicken."</caption>
+	<voices>
+		<meMC>assets/voices/25/HUD.mp3</meMC>
+		<dogMC>assets/voices/25/HUD.mp3</dogMC>
+	</voices>
+  </item>
+  <item>
+    <file>assets/swf/26.swf</file>
+	<image>assets/images/26.jpg</image>
+	<sound>assets/sounds/26.mp3</sound>
+    <caption>I ran to my mother, Mother Chicken, and cried: "You are the &#10;best mother in the world! Only you are my mother!"</caption>
+	<voices>
+		<chickenMC>assets/voices/26/HUD.mp3</chickenMC>
+		<meMC>assets/voices/26/HUD.mp3</meMC>
+		<chick1MC>assets/voices/26/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/26/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/26/HUD.mp3</chick3MC>
+	</voices>
+   
+  </item>
+   <item>
+    <file>assets/swf/27.swf</file>
+	<image>assets/images/27.jpg</image>
+	<sound>assets/sounds/27.mp3</sound>
+    <caption>We all crawled together under mothers wings.&#10; It was wonderful!</caption>
+	<voices>
+		<chickenMC>assets/voices/27/HUD.mp3</chickenMC>
+		<chick1MC>assets/voices/27/HUD.mp3</chick1MC>
+		<chick2MC>assets/voices/27/HUD.mp3</chick2MC>
+		<chick3MC>assets/voices/27/HUD.mp3</chick3MC>
+		<chick4MC>assets/voices/27/HUD.mp3</chick4MC>
+		<chick5MC>assets/voices/27/HUD.mp3</chick5MC>
+	</voices>
+	</item>
+</list>
