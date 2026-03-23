@@ -3700,7 +3700,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BgMC1.png",
+          "filePath": "images/BgMC1.webp",
           "filters": {}
         }
       ],
@@ -3812,7 +3812,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc2MC1.png",
+          "filePath": "images/Mc2MC1.webp",
           "filters": {}
         }
       ],
@@ -3924,7 +3924,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc1MC1.png",
+          "filePath": "images/Mc1MC1.webp",
           "filters": {}
         }
       ],
@@ -4036,7 +4036,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc3MC1.png",
+          "filePath": "images/Mc3MC1.webp",
           "filters": {}
         }
       ],
@@ -4148,7 +4148,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc4MC.png",
+          "filePath": "images/Mc4MC.webp",
           "filters": {}
         }
       ],
@@ -4260,7 +4260,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc5MC1.png",
+          "filePath": "images/Mc5MC1.webp",
           "filters": {}
         }
       ],
@@ -4625,7 +4625,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Foot1MC.png",
+          "filePath": "images/Foot1MC.webp",
           "filters": {}
         }
       ],
@@ -4690,7 +4690,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Foot2MC.png",
+          "filePath": "images/Foot2MC.webp",
           "filters": {}
         }
       ],
@@ -4755,7 +4755,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/LegMC.png",
+          "filePath": "images/LegMC.webp",
           "filters": {}
         }
       ],
@@ -4820,7 +4820,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BlackBodyMC.png",
+          "filePath": "images/BlackBodyMC.webp",
           "filters": {}
         }
       ],
@@ -4885,7 +4885,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Leg2MC.png",
+          "filePath": "images/Leg2MC.webp",
           "filters": {}
         }
       ],
@@ -4950,7 +4950,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BlackwingMC.png",
+          "filePath": "images/BlackwingMC.webp",
           "filters": {}
         }
       ],

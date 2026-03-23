@@ -315,7 +315,7 @@
           "y": -0.5,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/instance5.png",
+          "filePath": "images/instance5.webp",
           "filters": {}
         }
       ],
@@ -333,7 +333,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/instance7.png",
+          "filePath": "images/instance7.webp",
           "filters": {}
         }
       ],
@@ -397,7 +397,7 @@
           "y": -39.85,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/xButton.png",
+          "filePath": "images/xButton.webp",
           "filters": {}
         }
       ]
@@ -413,7 +413,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/aboutTXTArea.png",
+          "filePath": "images/aboutTXTArea.webp",
           "filters": {}
         }
       ],
@@ -653,7 +653,7 @@
           "origHeight": 369,
           "x": 0,
           "y": 0,
-          "filePath": "images/scroll_bar_btn_focused.png",
+          "filePath": "images/scroll_bar_btn_focused.webp",
           "filters": {},
           "left": 20,
           "right": 20,
@@ -721,7 +721,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/scroll_bar_btn_disabled.png",
+          "filePath": "images/scroll_bar_btn_disabled.webp",
           "filters": {}
         }
       ],

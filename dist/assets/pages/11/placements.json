@@ -2072,7 +2072,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BgMC1.png",
+          "filePath": "images/BgMC1.webp",
           "filters": {}
         }
       ],
@@ -2184,7 +2184,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Duck1MC1.png",
+          "filePath": "images/Duck1MC1.webp",
           "filters": {}
         }
       ],
@@ -2296,7 +2296,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Duck2MC.png",
+          "filePath": "images/Duck2MC.webp",
           "filters": {}
         }
       ],
@@ -2408,7 +2408,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Duck3MC.png",
+          "filePath": "images/Duck3MC.webp",
           "filters": {}
         }
       ],
@@ -2684,7 +2684,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/WingMC.png",
+          "filePath": "images/WingMC.webp",
           "filters": {}
         }
       ],
@@ -2749,7 +2749,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/DuckBodyMC.png",
+          "filePath": "images/DuckBodyMC.webp",
           "filters": {}
         }
       ],
@@ -2814,7 +2814,7 @@
           "y": -13.05,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/ChickfaceMC.png",
+          "filePath": "images/ChickfaceMC.webp",
           "filters": {}
         }
       ],
@@ -2879,7 +2879,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Wing2MC.png",
+          "filePath": "images/Wing2MC.webp",
           "filters": {}
         }
       ],
@@ -2897,7 +2897,7 @@
           "y": -111.45,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/DuckFaceMC.png",
+          "filePath": "images/DuckFaceMC.webp",
           "filters": {}
         }
       ],
@@ -2915,7 +2915,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc.png",
+          "filePath": "images/Mc.webp",
           "filters": {}
         }
       ],

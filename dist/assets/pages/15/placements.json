@@ -2694,7 +2694,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BgMC1.png",
+          "filePath": "images/BgMC1.webp",
           "filters": {}
         }
       ],
@@ -2759,7 +2759,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/TailMC.png",
+          "filePath": "images/TailMC.webp",
           "filters": {}
         },
         {
@@ -2818,7 +2818,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/WingMC.png",
+          "filePath": "images/WingMC.webp",
           "filters": {}
         }
       ],
@@ -2930,7 +2930,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Bird3MC.png",
+          "filePath": "images/Bird3MC.webp",
           "filters": {}
         },
         {
@@ -2989,7 +2989,7 @@
           "y": -21.25,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Eyecopy.png",
+          "filePath": "images/Eyecopy.webp",
           "filters": {}
         }
       ],
@@ -3101,7 +3101,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Bird4MC.png",
+          "filePath": "images/Bird4MC.webp",
           "filters": {}
         },
         {
@@ -3160,7 +3160,7 @@
           "y": -21.2,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Eyecopy.png",
+          "filePath": "images/Eyecopy.webp",
           "filters": {}
         }
       ],
@@ -3272,7 +3272,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Bird2MC.png",
+          "filePath": "images/Bird2MC.webp",
           "filters": {}
         },
         {
@@ -3431,7 +3431,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Bird1MC.png",
+          "filePath": "images/Bird1MC.webp",
           "filters": {}
         }
       ],
@@ -3496,7 +3496,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/NestMC1.png",
+          "filePath": "images/NestMC1.webp",
           "filters": {}
         }
       ],
@@ -3649,7 +3649,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/FootMC1.png",
+          "filePath": "images/FootMC1.webp",
           "filters": {}
         }
       ],
@@ -3714,7 +3714,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BlackMC1.png",
+          "filePath": "images/BlackMC1.webp",
           "filters": {}
         }
       ],

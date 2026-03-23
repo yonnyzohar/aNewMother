@@ -4000,7 +4000,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BgMC1.png",
+          "filePath": "images/BgMC1.webp",
           "filters": {}
         }
       ],
@@ -4112,7 +4112,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc2MC1.png",
+          "filePath": "images/Mc2MC1.webp",
           "filters": {}
         }
       ],
@@ -4265,7 +4265,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc3wingMC.png",
+          "filePath": "images/Mc3wingMC.webp",
           "filters": {}
         }
       ],
@@ -4330,7 +4330,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc3bodyMC1.png",
+          "filePath": "images/Mc3bodyMC1.webp",
           "filters": {}
         }
       ],
@@ -4443,7 +4443,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc4bodyMC.png",
+          "filePath": "images/Mc4bodyMC.webp",
           "filters": {}
         },
         {
@@ -4502,7 +4502,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc4wing1MC.png",
+          "filePath": "images/Mc4wing1MC.webp",
           "filters": {}
         },
         {
@@ -4561,7 +4561,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc4wing2MC.png",
+          "filePath": "images/Mc4wing2MC.webp",
           "filters": {}
         }
       ],
@@ -4673,7 +4673,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Mc1MC.png",
+          "filePath": "images/Mc1MC.webp",
           "filters": {}
         }
       ],
@@ -4915,7 +4915,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Wing2MC.png",
+          "filePath": "images/Wing2MC.webp",
           "filters": {}
         }
       ],
@@ -4980,7 +4980,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BlackbodyMC.png",
+          "filePath": "images/BlackbodyMC.webp",
           "filters": {}
         }
       ],
@@ -5045,7 +5045,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Wing1MC.png",
+          "filePath": "images/Wing1MC.webp",
           "filters": {}
         }
       ],
@@ -5157,7 +5157,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/HeadMC.png",
+          "filePath": "images/HeadMC.webp",
           "filters": {}
         }
       ],
@@ -5269,7 +5269,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/WingMC.png",
+          "filePath": "images/WingMC.webp",
           "filters": {}
         }
       ],

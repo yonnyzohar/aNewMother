@@ -2763,7 +2763,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BgMC1.png",
+          "filePath": "images/BgMC1.webp",
           "filters": {}
         }
       ],
@@ -2781,7 +2781,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Kittens.png",
+          "filePath": "images/Kittens.webp",
           "filters": {}
         }
       ],
@@ -2893,7 +2893,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/CatMC.png",
+          "filePath": "images/CatMC.webp",
           "filters": {}
         }
       ],
@@ -3217,7 +3217,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Foot1MC.png",
+          "filePath": "images/Foot1MC.webp",
           "filters": {}
         }
       ],
@@ -3282,7 +3282,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Leg1MC.png",
+          "filePath": "images/Leg1MC.webp",
           "filters": {}
         }
       ],
@@ -3347,7 +3347,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/ChickBodyMC.png",
+          "filePath": "images/ChickBodyMC.webp",
           "filters": {}
         }
       ],
@@ -3412,7 +3412,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Foot2MC.png",
+          "filePath": "images/Foot2MC.webp",
           "filters": {}
         }
       ],
@@ -3477,7 +3477,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Leg2MC.png",
+          "filePath": "images/Leg2MC.webp",
           "filters": {}
         }
       ],

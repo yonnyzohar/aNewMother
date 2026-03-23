@@ -1428,7 +1428,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BgMC1.png",
+          "filePath": "images/BgMC1.webp",
           "filters": {}
         }
       ],
@@ -1752,7 +1752,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Leg1MC.png",
+          "filePath": "images/Leg1MC.webp",
           "filters": {}
         }
       ],
@@ -1817,7 +1817,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Leg2MC.png",
+          "filePath": "images/Leg2MC.webp",
           "filters": {}
         }
       ],
@@ -1882,7 +1882,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Wing1MC.png",
+          "filePath": "images/Wing1MC.webp",
           "filters": {}
         }
       ],
@@ -1947,7 +1947,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/BodyMC.png",
+          "filePath": "images/BodyMC.webp",
           "filters": {}
         }
       ],
@@ -2012,7 +2012,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/Wing2MC.png",
+          "filePath": "images/Wing2MC.webp",
           "filters": {}
         }
       ],
@@ -2077,7 +2077,7 @@
           "y": 0,
           "pivotX": 0,
           "pivotY": 0,
-          "filePath": "images/WaterMC1.png",
+          "filePath": "images/WaterMC1.webp",
           "filters": {}
         }
       ],
