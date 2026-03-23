@@ -27,31 +27,23 @@ export class Game {
 
     private async _showSplash(): Promise<void> {
         this.currentScreen = 'splash';
-        const preloader = new Preloader(this.stage);
-        preloader.show();
 
         // Splash onComplete fires after 2 s; we use it to begin loading the menu
         // while the splash is still visible.
         const splash = new SplashScreen(this.stage, () => this._splashToMenu(splash));
         await splash.load();
 
-        // Splash is now on stage; hide the loading indicator.
-        preloader.hide();
         this.forceRender?.();
     }
 
     /** Called by SplashScreen after its 2-second hold. Loads menu, then removes splash. */
     private async _splashToMenu(splash: SplashScreen): Promise<void> {
-        const preloader = new Preloader(this.stage);
-        preloader.show();
-
         const menu = this._buildMenu();
-        await menu.load(); // menu is added to stage (on top of splash + preloader)
+        await menu.load(); // menu is added to stage (on top of splash)
 
         await splash.destroy(); // splash is now hidden behind menu — safe to destroy
         this.currentScreen = 'menu';
         this.activeMenu = menu;
-        preloader.hide();
         this.forceRender?.();
     }
 
@@ -74,14 +66,11 @@ export class Game {
     /** Loads a fresh menu. Called when returning from About or Book. */
     private async _showMenu(): Promise<void> {
         this.currentScreen = 'menu';
-        const preloader = new Preloader(this.stage);
-        preloader.show();
 
         const menu = this._buildMenu();
         await menu.load();
 
         this.activeMenu = menu;
-        preloader.hide();
         this.forceRender?.();
     }
 

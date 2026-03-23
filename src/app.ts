@@ -23,11 +23,13 @@ window.addEventListener("resize", () => {
 
 (globalThis as any).__PIXI_APP__ = app;
 
-var game = new Game(app.stage, resizeCanvas);
-
-
-// Append the app's view to the DOM
+// Append the app's view to the DOM and resize to fill the window so that
+// coordinate calculations (e.g. centering the loading bar) are correct
+// before the Game is constructed.
 document.body.appendChild(app.view as any);
+app.renderer.resize(window.innerWidth, window.innerHeight);
+
+var game = new Game(app.stage, resizeCanvas);
 ZUpdatables.init(24);
 
 const fpsText = new PIXI.Text('FPS: 0', { fontSize: 24, fill: 'white' });

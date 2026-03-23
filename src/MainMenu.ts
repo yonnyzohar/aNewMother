@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { ZScene, ZSceneStack, ZButton, ZContainer } from 'zimporter-pixi';
 import { GlobalData } from './GlobalData';
+import { LoadingBar } from './LoadingBar';
 import { StoryLoader } from './StoryLoader';
 import { safeDestroyScene } from './sceneUtils';
 
@@ -28,9 +29,11 @@ export class MainMenu {
     }
 
     async load(): Promise<void> {
+        const bar = new LoadingBar(this.stage);
         await new Promise<void>(resolve => {
-            this.scene.load(`${GlobalData.assetsBasePath}mainMenu/`, () => resolve());
+            this.scene.load(`${GlobalData.assetsBasePath}mainMenu/`, () => resolve(), p => bar.update(p));
         });
+        bar.remove();
 
         ZSceneStack.push(this.scene);
         this.scene.loadStage(this.stage);

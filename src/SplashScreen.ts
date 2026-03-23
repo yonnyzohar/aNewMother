@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { ZScene, ZSceneStack, ZTimeline } from 'zimporter-pixi';
 import { GlobalData } from './GlobalData';
+import { LoadingBar } from './LoadingBar';
 import { StoryLoader } from './StoryLoader';
 import { safeDestroyScene } from './sceneUtils';
 
@@ -16,13 +17,15 @@ export class SplashScreen {
     }
 
     async load(): Promise<void> {
+        const bar = new LoadingBar(this.stage);
         // Load splash scene visuals and story XML simultaneously
         await Promise.all([
             new Promise<void>(resolve => {
-                this.scene.load(`${GlobalData.assetsBasePath}Splash/`, () => resolve());
+                this.scene.load(`${GlobalData.assetsBasePath}Splash/`, () => resolve(), p => bar.update(p));
             }),
             StoryLoader.load(GlobalData.currentLang),
         ]);
+        bar.remove();
 
         ZSceneStack.push(this.scene);
         this.scene.loadStage(this.stage);
