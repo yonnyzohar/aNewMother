@@ -34,14 +34,16 @@ export class SplashScreen {
             }
         }
 
-        // Show splash for 2 s, then transition
-        setTimeout(() => { this._complete(); }, 2000);
+        // Show splash for 2 s, then signal Game to begin the next scene.
+        // Destruction is deferred to Game.ts so the splash stays visible
+        // while the next scene is loading.
+        setTimeout(() => { this.onComplete(); }, 2000);
     }
 
-    private async _complete(): Promise<void> {
+    /** Called by Game.ts after the next scene has finished loading. */
+    async destroy(): Promise<void> {
         ZSceneStack.pop();
         this.stage.removeChild(this.scene.sceneStage);
         await safeDestroyScene(this.scene);
-        this.onComplete();
     }
 }

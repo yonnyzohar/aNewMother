@@ -4,6 +4,7 @@ import { MainMenu } from './MainMenu';
 import { AboutScreen } from './AboutScreen';
 import { BookController } from './BookController';
 import { GlobalData } from './GlobalData';
+import { Preloader } from './Preloader';
 
 type Screen = 'splash' | 'menu' | 'about' | 'book';
 
@@ -24,17 +25,41 @@ export class Game {
 
     // ─── Screen transitions ────────────────────────────────────────────────────
 
-    private _showSplash(): void {
+    private async _showSplash(): Promise<void> {
         this.currentScreen = 'splash';
-        const splash = new SplashScreen(this.stage, () => this._showMenu());
-        splash.load().then(() => this.forceRender?.());
+        const preloader = new Preloader(this.stage);
+        preloader.show();
+
+        // Splash onComplete fires after 2 s; we use it to begin loading the menu
+        // while the splash is still visible.
+        const splash = new SplashScreen(this.stage, () => this._splashToMenu(splash));
+        await splash.load();
+
+        // Splash is now on stage; hide the loading indicator.
+        preloader.hide();
+        this.forceRender?.();
     }
 
-    private _showMenu(): void {
-        this.currentScreen = 'menu';
-        GlobalData.counter = 0; // reset to first page when returning to menu
+    /** Called by SplashScreen after its 2-second hold. Loads menu, then removes splash. */
+    private async _splashToMenu(splash: SplashScreen): Promise<void> {
+        const preloader = new Preloader(this.stage);
+        preloader.show();
 
-        const menu = new MainMenu(
+        const menu = this._buildMenu();
+        await menu.load(); // menu is added to stage (on top of splash + preloader)
+
+        await splash.destroy(); // splash is now hidden behind menu — safe to destroy
+        this.currentScreen = 'menu';
+        this.activeMenu = menu;
+        preloader.hide();
+        this.forceRender?.();
+    }
+
+    /** Constructs a MainMenu wired to this Game's callbacks. */
+    private _buildMenu(): MainMenu {
+        GlobalData.counter = 0;
+        let menu!: MainMenu;
+        menu = new MainMenu(
             this.stage,
             () => this._showBook(),
             () => this._showAbout(),
@@ -43,33 +68,59 @@ export class Game {
                 menu.reload().then(() => this.forceRender?.());
             },
         );
+        return menu;
+    }
+
+    /** Loads a fresh menu. Called when returning from About or Book. */
+    private async _showMenu(): Promise<void> {
+        this.currentScreen = 'menu';
+        const preloader = new Preloader(this.stage);
+        preloader.show();
+
+        const menu = this._buildMenu();
+        await menu.load();
+
         this.activeMenu = menu;
-        menu.load().then(() => this.forceRender?.());
+        preloader.hide();
+        this.forceRender?.();
     }
 
-    private _showAbout(): void {
+    private async _showAbout(): Promise<void> {
         this.currentScreen = 'about';
-        // Destroy the menu first so About can draw over a clean slate
-        this.activeMenu?.destroy();
+        const menuToDestroy = this.activeMenu;
         this.activeMenu = null;
 
-        const about = new AboutScreen(this.stage, () => {
-            this._showMenu();
-        });
-        about.load().then(() => this.forceRender?.());
+        // Show preloader on top of the menu — disables all menu buttons.
+        const preloader = new Preloader(this.stage);
+        preloader.show();
+
+        const about = new AboutScreen(this.stage, () => this._showMenu());
+        await about.load(); // about is added to stage on top of menu + preloader
+
+        menuToDestroy?.destroy(); // menu is hidden behind about — safe to destroy
+        preloader.hide();
+        this.forceRender?.();
     }
 
-    private _showBook(): void {
+    private async _showBook(): Promise<void> {
         this.currentScreen = 'book';
-        this.activeMenu?.destroy();
+        const menuToDestroy = this.activeMenu;
         this.activeMenu = null;
+
+        // Show preloader on top of the menu — disables all menu buttons.
+        const preloader = new Preloader(this.stage);
+        preloader.show();
 
         const book = new BookController(this.stage, () => {
             this.activeBook = null;
             this._showMenu();
         });
         this.activeBook = book;
-        book.load().then(() => this.forceRender?.());
+        await book.load(); // book frame is added to stage on top of menu + preloader
+
+        menuToDestroy?.destroy(); // menu is hidden behind book — safe to destroy
+        preloader.hide();
+        this.forceRender?.();
     }
 
     // ─── Called by app.ts ticker ───────────────────────────────────────────────
