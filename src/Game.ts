@@ -1,4 +1,5 @@
 import * as PIXI from 'pixi.js';
+import { ZSceneStack } from 'zimporter-pixi';
 import { SplashScreen } from './SplashScreen';
 import { MainMenu } from './MainMenu';
 import { AboutScreen } from './AboutScreen';
@@ -41,7 +42,7 @@ export class Game {
         const menu = this._buildMenu();
         await menu.load(); // menu is added to stage (on top of splash)
 
-        await splash.destroy(); // splash is now hidden behind menu — safe to destroy
+        splash.destroy(); // splash is now hidden behind menu — safe to destroy
         this.currentScreen = 'menu';
         this.activeMenu = menu;
         this.forceRender?.();
@@ -83,6 +84,9 @@ export class Game {
         const preloader = new Preloader(this.stage);
         preloader.show();
 
+        // Pop the menu from the resize stack before About pushes itself on top.
+        ZSceneStack.pop();
+
         const about = new AboutScreen(this.stage, () => this._showMenu());
         await about.load(); // about is added to stage on top of menu + preloader
 
@@ -99,6 +103,9 @@ export class Game {
         // Show preloader on top of the menu — disables all menu buttons.
         const preloader = new Preloader(this.stage);
         preloader.show();
+
+        // Pop the menu from the resize stack before Book pushes itself on top.
+        ZSceneStack.pop();
 
         const book = new BookController(this.stage, () => {
             this.activeBook = null;

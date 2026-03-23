@@ -2,7 +2,7 @@ import * as PIXI from 'pixi.js';
 import { ZScene, ZSceneStack, ZTimeline, ZContainer, ZButton } from 'zimporter-pixi';
 import { GlobalData } from './GlobalData';
 import { MainMenu } from './MainMenu';
-import { safeDestroyScene, unloadSceneImages } from './sceneUtils';
+import { unloadSceneImages } from './sceneUtils';
 import { SlideObj } from './SlideObj';
 import { gsap } from 'gsap';
 
@@ -215,7 +215,7 @@ export class BookController {
         if (!canAnimate) {
             if (oldScene) {
                 this.blockBGContainer?.removeChild(oldScene.sceneStage);
-                safeDestroyScene(oldScene);
+                oldScene.sceneStage.destroy({ children: true });
             }
             if (oldMask) {
                 this.blockBGContainer?.removeChild(oldMask);
@@ -277,7 +277,7 @@ export class BookController {
                 // Destroy old scene now that it's fully off-screen.
                 if (oldScene) {
                     this.blockBGContainer?.removeChild(oldScene.sceneStage);
-                    safeDestroyScene(oldScene);
+                    oldScene.sceneStage.destroy({ children: true });
                 }
                 if (oldMask) {
                     this.blockBGContainer?.removeChild(oldMask);
@@ -506,7 +506,7 @@ export class BookController {
 
         if (this.currentPageScene) {
             this.stage?.removeChild(this.currentPageScene.sceneStage);
-            safeDestroyScene(this.currentPageScene);
+            this.currentPageScene.sceneStage.destroy({ children: true });
             this.currentPageScene = null;
             this.currentPagePath = null;
         }
@@ -514,7 +514,7 @@ export class BookController {
         if (this.blockScene) {
             ZSceneStack.pop();
             this.stage.removeChild(this.blockScene.sceneStage);
-            safeDestroyScene(this.blockScene);
+            this.blockScene.sceneStage.destroy({ children: true });
             this.blockScene = null;
         }
 

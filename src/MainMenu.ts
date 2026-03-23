@@ -3,7 +3,6 @@ import { ZScene, ZSceneStack, ZButton, ZContainer } from 'zimporter-pixi';
 import { GlobalData } from './GlobalData';
 import { LoadingBar } from './LoadingBar';
 import { StoryLoader } from './StoryLoader';
-import { safeDestroyScene } from './sceneUtils';
 
 export class MainMenu {
     private scene: ZScene;
@@ -81,8 +80,7 @@ export class MainMenu {
         aboutBtn?.removeCallback();
 
         this.stage.removeChild(this.overlay);
-        ZSceneStack.pop();
         this.stage.removeChild(this.scene.sceneStage);
-        safeDestroyScene(this.scene);
+        this.scene.sceneStage.destroy({ children: true });
     }
 }

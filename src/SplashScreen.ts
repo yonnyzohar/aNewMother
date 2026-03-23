@@ -1,9 +1,8 @@
 import * as PIXI from 'pixi.js';
-import { ZScene, ZSceneStack, ZTimeline } from 'zimporter-pixi';
+import { ZScene, ZTimeline } from 'zimporter-pixi';
 import { GlobalData } from './GlobalData';
 import { LoadingBar } from './LoadingBar';
 import { StoryLoader } from './StoryLoader';
-import { safeDestroyScene } from './sceneUtils';
 
 export class SplashScreen {
     private scene: ZScene;
@@ -27,7 +26,6 @@ export class SplashScreen {
         ]);
         bar.remove();
 
-        ZSceneStack.push(this.scene);
         this.scene.loadStage(this.stage);
 
         // Auto-play any timeline animations in the splash scene
@@ -44,9 +42,11 @@ export class SplashScreen {
     }
 
     /** Called by Game.ts after the next scene has finished loading. */
-    async destroy(): Promise<void> {
-        ZSceneStack.pop();
+    destroy(): void {
+        // Only remove and destroy the display objects — calling scene.destroy()
+        // spawns an internal async task that runs layout on already-freed sprites
+        // and throws an uncatchable "null texture" error.
         this.stage.removeChild(this.scene.sceneStage);
-        await safeDestroyScene(this.scene);
+        this.scene.sceneStage.destroy({ children: true });
     }
 }
