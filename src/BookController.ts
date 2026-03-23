@@ -54,16 +54,34 @@ export class BookController {
         this.onBack = onBack;
     }
 
-    // ─── Load ────────────────────────────────────────────────────────────────
+    // ─── Static preload ───────────────────────────────────────────────────────
 
-    async load(): Promise<void> {
-        // 1. Load the Block frame scene — the persistent wooden border
-        this.blockScene = new ZScene('blockFrame');
-        await new Promise<void>(resolve => {
-            this.blockScene!.load(`${GlobalData.assetsBasePath}Block/`, () => resolve());
+    /** Begin loading the Block frame assets in the background. Returns a
+     *  promise that resolves with a ready-to-use ZScene so that load() can
+     *  skip the network fetch entirely if the user navigates to the book
+     *  after the preload has finished. */
+    static preloadBlockScene(): Promise<ZScene> {
+        const scene = new ZScene('blockFrame');
+        return new Promise<ZScene>(resolve => {
+            scene.load(`${GlobalData.assetsBasePath}Block/`, () => resolve(scene));
         });
-        ZSceneStack.push(this.blockScene);
-        this.blockScene.loadStage(this.stage);
+    }
+
+    async load(preloadedBlockScene?: ZScene): Promise<void> {
+        // 1. Load the Block frame scene — use the pre-loaded scene if available
+        if (preloadedBlockScene) {
+            this.blockScene = preloadedBlockScene;
+        } else {
+            this.blockScene = new ZScene('blockFrame');
+            await new Promise<void>(resolve => {
+                this.blockScene!.load(`${GlobalData.assetsBasePath}Block/`, () => resolve());
+            });
+        }
+        // Initialize sceneStage children offscreen so the menu stays visible
+        // while the first page loads. We'll add to the real stage afterwards.
+        const offscreen = new PIXI.Container();
+        this.blockScene.loadStage(offscreen);
+        offscreen.removeChild(this.blockScene.sceneStage);
 
         // Grab blockBG and textBox containers for positioning
         this.blockBGContainer = this.blockScene.sceneStage.get('blockBG');
@@ -108,8 +126,12 @@ export class BookController {
         // 2. Build nav-button overlay (always on top)
         this._buildOverlay();
 
-        // 3. Load first page
+        // 3. Load first page offscreen, then bring the full book onto the stage
         await this._loadPage(GlobalData.counter);
+
+        // Everything is ready — add to real stage and resize stack now
+        this.stage.addChild(this.blockScene.sceneStage);
+        ZSceneStack.push(this.blockScene);
 
         let blockMaster = this.blockScene.sceneStage.get("blockMaster") as ZContainer;
         let circleContainer = this.blockScene.sceneStage.get("circleContainer") as ZContainer;
@@ -207,7 +229,10 @@ export class BookController {
         // consistently in landscape regardless of the device orientation.
         const sceneAny = scene as any;
         sceneAny.setOrientation = () => { sceneAny.orientation = 'landscape'; };
-        scene.loadStage(this.stage);
+        // Use an offscreen container — the sceneStage goes into blockBGContainer below.
+        const pageTmp = new PIXI.Container();
+        scene.loadStage(pageTmp);
+        pageTmp.removeChild(scene.sceneStage);
         delete sceneAny.setOrientation;
 
         const w = Math.max(scene.sceneWidth, scene.sceneHeight);

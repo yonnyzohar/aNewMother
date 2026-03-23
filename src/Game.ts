@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { ZSceneStack } from 'zimporter-pixi';
+import { ZScene, ZSceneStack } from 'zimporter-pixi';
 import { SplashScreen } from './SplashScreen';
 import { MainMenu } from './MainMenu';
 import { AboutScreen } from './AboutScreen';
@@ -17,6 +17,9 @@ export class Game {
     /** Keep a reference to the active screen object for resize forwarding. */
     private activeBook: BookController | null = null;
     private activeMenu: MainMenu | null = null;
+
+    /** Pending background preload of the Block frame scene. */
+    private _blockPreload: Promise<ZScene> | null = null;
 
     constructor(stage: PIXI.Container, forceRenderFnc: Function | null = null) {
         this.stage = stage;
@@ -45,6 +48,7 @@ export class Game {
         splash.destroy(); // splash is now hidden behind menu — safe to destroy
         this.currentScreen = 'menu';
         this.activeMenu = menu;
+        this._blockPreload = BookController.preloadBlockScene();
         this.forceRender?.();
     }
 
@@ -72,6 +76,7 @@ export class Game {
         await menu.load();
 
         this.activeMenu = menu;
+        this._blockPreload = BookController.preloadBlockScene();
         this.forceRender?.();
     }
 
@@ -100,22 +105,22 @@ export class Game {
         const menuToDestroy = this.activeMenu;
         this.activeMenu = null;
 
-        // Show preloader on top of the menu — disables all menu buttons.
-        const preloader = new Preloader(this.stage);
-        preloader.show();
-
-        // Pop the menu from the resize stack before Book pushes itself on top.
-        ZSceneStack.pop();
+        // Await the background preload (instant if it already finished).
+        const preloadedScene = this._blockPreload ? await this._blockPreload : undefined;
+        this._blockPreload = null;
 
         const book = new BookController(this.stage, () => {
             this.activeBook = null;
             this._showMenu();
         });
         this.activeBook = book;
-        await book.load(); // book frame is added to stage on top of menu + preloader
+        // book.load() keeps everything offscreen until the first page is ready,
+        // so the menu stays fully visible throughout.
+        await book.load(preloadedScene);
 
-        menuToDestroy?.destroy(); // menu is hidden behind book — safe to destroy
-        preloader.hide();
+        // Book is fully ready — now pop the menu and swap.
+        ZSceneStack.pop();
+        menuToDestroy?.destroy();
         this.forceRender?.();
     }
 
