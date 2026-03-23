@@ -45,6 +45,7 @@ export class BookController {
     private loading = false;
     private pageMask: PIXI.Graphics | null = null;
     private slotOrigY: Map<ZContainer, number> = new Map();
+    private currentOrientation: string = "";
 
     
 
@@ -199,7 +200,16 @@ export class BookController {
         const oldMask  = this.pageMask;
 
         // ── 2. Scale + position the new scene stage ───────────────────────────
+        // Force landscape layout: page scenes have no portrait instance data,
+        // so ZScene would leave all MCs at (0,0) in portrait and the frozen
+        // sceneWidth/sceneHeight would mis-size the hitArea. Overriding
+        // setOrientation on the instance before loadStage keeps everything
+        // consistently in landscape regardless of the device orientation.
+        const sceneAny = scene as any;
+        sceneAny.setOrientation = () => { sceneAny.orientation = 'landscape'; };
         scene.loadStage(this.stage);
+        delete sceneAny.setOrientation;
+
         const w = Math.max(scene.sceneWidth, scene.sceneHeight);
         const h = Math.min(scene.sceneWidth, scene.sceneHeight);
         scene.sceneStage.scale.set(this.blockWidth / w, this.blockHeight / h);
@@ -347,18 +357,6 @@ export class BookController {
         }
     }
 
-    // ─── Resize ──────────────────────────────────────────────────────────────
-
-    /**
-     * Called from app.ts AFTER ZSceneStack.resize() has already updated the
-     * Block frame scene.  Re-fits the page and repositions buttons/caption.
-     */
-    resize(_W: number, _H: number): void {
-        // page scaling is fixed at load time; no resize action needed.
-    }
-
-    // ─── Navigation ──────────────────────────────────────────────────────────
-
     private _prev(): void {
         if (this.loading || GlobalData.counter <= 0) return;
         GlobalData.counter--;
@@ -411,6 +409,7 @@ export class BookController {
 
     private _attachVoiceHandlers(scene: ZScene, slide: SlideObj): void {
         if (Object.keys(slide.voices).length === 0) return;
+        console.log(`BookController: attaching voice handlers for page ${slide.pageNum}:`, slide.voices);
 
         const sceneStage = scene.sceneStage;
 
@@ -421,48 +420,69 @@ export class BookController {
             node = node.parent as PIXI.Container | null;
         }
 
-        // Give sceneStage a broad hitArea covering the full design space so
-        // PIXI always considers it hittable, regardless of child offsets.
-        sceneStage.hitArea = new PIXI.Rectangle(
-            0, 0, scene.sceneWidth, scene.sceneHeight
-        );
+        // Give sceneStage a broad hitArea covering the full landscape design space.
+        // Use max(w,h) x max(h,w) so it never clips regardless of scene.orientation.
+        const designW = Math.max(scene.sceneWidth, scene.sceneHeight);
+        const designH = Math.min(scene.sceneWidth, scene.sceneHeight);
+        sceneStage.hitArea = new PIXI.Rectangle(0, 0, designW, designH);
         sceneStage.eventMode = 'static';
 
         // ONE listener on sceneStage — resolve the clicked MC via screen-space
         // bounds check, bypassing per-MC containsPoint() issues entirely.
         
-            for (const [mcName, voicePath] of Object.entries(slide.voices)) {
-                const mc = sceneStage.get(mcName);
-                
-                if (!mc){
-                    console.warn(`BookController: voice MC "${mcName}" not found on page ${slide.pageNum}`);
-                    continue;
-                } 
-                console.log(`BookController: attached voice handler for "${mcName}" → ${voicePath}`);
-                mc.interactive = true;
-                mc.cursor = 'pointer';
-                // Pre-compute and lock the hit area so PIXI never has to
-                // recompute it dynamically (unreliable on Flash-export ZContainers).
-                const lb = mc.getLocalBounds();
-                mc.hitArea = new PIXI.Rectangle(lb.x - 10, lb.y - 10, lb.width + 20, lb.height + 20);
-                let callback = (event: PIXI.FederatedPointerEvent) => {
-                    this._stopVoice();
-                    const url = `${GlobalData.assetsBasePath}${voicePath}`;
-                    this.voiceAudio = new Audio(url);
-                    this.voiceAudio.play().catch(e => console.warn(`Voice play error (${mcName}):`, e));
+        for (const [mcName, voicePath] of Object.entries(slide.voices)) {
+            const mc = sceneStage.get(mcName);
+            
+            if (!mc){
+                console.warn(`BookController: voice MC "${mcName}" not found on page ${slide.pageNum}`);
+                continue;
+            } 
+            console.log(`BookController: attached voice handler for "${mcName}" → ${voicePath}`);
+            mc.interactive = true;
+            mc.cursor = 'pointer';
+            mc.removeAllListeners();  // ensure no old handlers remain after page transitions
+            // Pre-compute and lock the hit area so PIXI never has to
+            // recompute it dynamically (unreliable on Flash-export ZContainers).
+            const lb = mc.getLocalBounds();
+            mc.hitArea = new PIXI.Rectangle(lb.x - 10, lb.y - 10, lb.width + 20, lb.height + 20);
+            let callback = (event: PIXI.FederatedPointerEvent) => {
+                this._stopVoice();
+                const url = `${GlobalData.assetsBasePath}${voicePath}`;
+                this.voiceAudio = new Audio(url);
+                this.voiceAudio.play().catch(e => console.warn(`Voice play error (${mcName}):`, e));
 
-                    // Momentary highlight: yellow color matrix filter
-                    const cmf = new PIXI.filters.ColorMatrixFilter();
-                    cmf.tint(0xffee88, false);
-                    mc.filters = [...(mc.filters ?? []), cmf];
-                    setTimeout(() => {
-                        mc.filters = (mc.filters ?? []).filter(f => f !== cmf);
-                        cmf.destroy();
-                    }, 200);
-                };
-                mc.on('mousedown', callback);
-                mc.on('touchstart', callback);  
+                // Momentary highlight: yellow color matrix filter
+                const cmf = new PIXI.filters.ColorMatrixFilter();
+                cmf.tint(0xffee88, false);
+                mc.filters = [...(mc.filters ?? []), cmf];
+                setTimeout(() => {
+                    mc.filters = (mc.filters ?? []).filter(f => f !== cmf);
+                    cmf.destroy();
+                }, 200);
+            };
+            mc.on('mousedown', callback);
+            mc.on('touchstart', callback);  
         }
+    }
+
+    /**
+     * Called from app.ts AFTER ZSceneStack.resize() has already updated the
+     * Block frame scene.  Re-fits the page and repositions buttons/caption.
+     */
+    resize(_W: number, _H: number): void {
+        // page scaling is fixed at load time; no resize action needed.
+        let orient = window.innerWidth > window.innerHeight ? "landscape" : "portrait";
+        if(orient !== this.currentOrientation)
+        {
+            console.log(`Orientation change: ${this.currentOrientation} → ${orient}`);
+            if(this.currentPageScene)
+            {
+
+                this._attachVoiceHandlers(this.currentPageScene!, GlobalData.pages[GlobalData.counter]);
+            }
+            
+        }
+        this.currentOrientation = orient;
     }
 
     private _stopVoice(): void {
